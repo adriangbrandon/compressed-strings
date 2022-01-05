@@ -1,0 +1,80 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/c/Users/bkorecic/Desktop/home/imfd/libCSD64'
+echo " [C++] Compiling utils/VByte.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/VByte.cpp -o utils/VByte.o
+echo " [C++] Compiling utils/LogSequence.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/LogSequence.cpp -o utils/LogSequence.o
+echo " [C++] Compiling utils/DAC_VLS.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/DAC_VLS.cpp -o utils/DAC_VLS.o
+echo " [C++] Compiling utils/DAC_BVLS.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/DAC_BVLS.cpp -o utils/DAC_BVLS.o
+echo " [C++] Compiling utils/Coder/StatCoder.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/Coder/StatCoder.cpp -o utils/Coder/StatCoder.o
+echo " [C++] Compiling utils/Coder/DecodingTableBuilder.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/Coder/DecodingTableBuilder.cpp -o utils/Coder/DecodingTableBuilder.o
+echo " [C++] Compiling utils/Coder/DecodingTable.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/Coder/DecodingTable.cpp -o utils/Coder/DecodingTable.o
+echo " [C++] Compiling utils/Coder/DecodingTree.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/Coder/DecodingTree.cpp -o utils/Coder/DecodingTree.o
+echo " [C++] Compiling utils/Coder/BinaryNode.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c utils/Coder/BinaryNode.cpp -o utils/Coder/BinaryNode.o
+echo " [C++] Compiling HuTucker/HuTucker.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c HuTucker/HuTucker.cpp -o HuTucker/HuTucker.o
+echo " [C++] Compiling Huffman/huff.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Huffman/huff.cpp -o Huffman/huff.o
+echo " [C++] Compiling Huffman/Huffman.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Huffman/Huffman.cpp -o Huffman/Huffman.o
+echo " [C++] Compiling RePair/Coder/arrayg.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/arrayg.cpp -o RePair/Coder/arrayg.o
+echo " [C++] Compiling RePair/Coder/basics.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/basics.cpp -o RePair/Coder/basics.o
+echo " [C++] Compiling RePair/Coder/hash.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/hash.cpp -o RePair/Coder/hash.o
+echo " [C++] Compiling RePair/Coder/heap.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/heap.cpp -o RePair/Coder/heap.o
+echo " [C++] Compiling RePair/Coder/records.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/records.cpp -o RePair/Coder/records.o
+echo " [C++] Compiling RePair/Coder/dictionary.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/dictionary.cpp -o RePair/Coder/dictionary.o
+echo " [C++] Compiling RePair/Coder/IRePair.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/IRePair.cpp -o RePair/Coder/IRePair.o
+echo " [C++] Compiling RePair/Coder/CRePair.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/Coder/CRePair.cpp -o RePair/Coder/CRePair.o
+echo " [C++] Compiling RePair/RePair.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c RePair/RePair.cpp -o RePair/RePair.o
+echo " [C++] Compiling Hash/Hash.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Hash/Hash.cpp -o Hash/Hash.o
+echo " [C++] Compiling Hash/HashDAC.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Hash/HashDAC.cpp -o Hash/HashDAC.o
+echo " [C++] Compiling Hash/Hashdh.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Hash/Hashdh.cpp -o Hash/Hashdh.o
+echo " [C++] Compiling Hash/HashBdh.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Hash/HashBdh.cpp -o Hash/HashBdh.o
+echo " [C++] Compiling Hash/HashBBdh.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Hash/HashBBdh.cpp -o Hash/HashBBdh.o
+echo " [C++] Compiling XBW/TrieNode.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c XBW/TrieNode.cpp -o XBW/TrieNode.o
+echo " [C++] Compiling XBW/XBW.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c XBW/XBW.cpp -o XBW/XBW.o
+echo " [C++] Compiling FMIndex/SuffixArray.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c FMIndex/SuffixArray.cpp -o FMIndex/SuffixArray.o
+echo " [C++] Compiling FMIndex/SSA.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c FMIndex/SSA.cpp -o FMIndex/SSA.o
+echo " [C++] Compiling StringDictionary.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c StringDictionary.cpp -o StringDictionary.o
+echo " [C++] Compiling StringDictionaryPFC.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c StringDictionaryPFC.cpp -o StringDictionaryPFC.o
+echo " [C++] Compiling StringDictionaryHHTFC.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c StringDictionaryHHTFC.cpp -o StringDictionaryHHTFC.o
+echo " [C++] Compiling StringDictionaryRPHTFC.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c StringDictionaryRPHTFC.cpp -o StringDictionaryRPHTFC.o
+echo " [C++] Compiling Build.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Build.cpp -o Build.o
+echo " [C++] Compiling Test.cpp"
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -c Test.cpp -o Test.o
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -o Build Build.o utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o  HuTucker/HuTucker.o Huffman/huff.o Huffman/Huffman.o RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o XBW/TrieNode.o XBW/XBW.o   FMIndex/SuffixArray.o FMIndex/SSA.o StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o libcds/lib/libcds.a
+c++ -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/  -o Test Test.o utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o  HuTucker/HuTucker.o Huffman/huff.o Huffman/Huffman.o RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o XBW/TrieNode.o XBW/XBW.o   FMIndex/SuffixArray.o FMIndex/SSA.o StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o libcds/lib/libcds.a
+echo " [MSG] Done compiling tests"
+echo " [FLG] -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/ "
+make: Leaving directory '/mnt/c/Users/bkorecic/Desktop/home/imfd/libCSD64'
+ 

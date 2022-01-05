@@ -1,0 +1,21 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/mnt/c/Users/bkorecic/Desktop/home/imfd/libcsd64",
+            "binaryPath": "/mnt/c/Users/bkorecic/Desktop/home/imfd/libcsd64/Build",
+            "binaryArgs": [
+                "3 p 8 ../ordered_object_file.dat big-64btest"
+            ]
+        },
+        {
+            "cwd": "/mnt/c/Users/bkorecic/Desktop/home/imfd/libCSD64",
+            "binaryPath": "/mnt/c/Users/bkorecic/Desktop/home/imfd/libCSD64/Test",
+            "binaryArgs": []
+        }
+    ],
+    "files.associations": {
+        "new": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp"
+    }
+}

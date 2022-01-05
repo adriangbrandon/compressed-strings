@@ -1,0 +1,922 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue Jan  4 10:07:42 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_AGENT_FOLDER = /home/bkorecic/.vscode-server
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+NVM_INC = /home/bkorecic/.nvm/versions/node/v15.14.0/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /mnt/c/Users/bkorecic/Desktop/home/imfd/libCSD64
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 19)
+BIN = Build Test
+# makefile (from 'Makefile', line 12)
+OBJECTS_HASH = Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /mnt/c/Users/bkorecic/AppData/Local/Programs/Microsoft VS Code/bin/code
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 10)
+OBJECTS_HUTUCKER = HuTucker/HuTucker.o
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 1)
+CPP = c++
+# environment
+VSCODE_CWD = /mnt/c/Users/bkorecic/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/bkorecic/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/bin:/home/bkorecic/.nvm/versions/node/v15.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files (x86)/Vim/vim82:/mnt/c/Program Files (x86)/FFmpeg/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/OpenJDK/jdk-14.0.2/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/MySQL/MySQL Server 8.0/bin:/mnt/c/Program Files/PostgreSQL/13/bin:/mnt/c/Go/bin:/mnt/c/dev/hugo:/mnt/c/Program Files/PowerShell/7/:/mnt/c/Users/bkorecic/AppData/Local/Pandoc:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/dev/Cmder:/mnt/c/Program Files (x86)/Google/Chrome/Application:/mnt/c/Dev/Ruby30-x64/bin:/mnt/c/Python/Python38/Scripts/:/mnt/c/Python/Python38/:/mnt/c/Users/bkorecic/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bkorecic/miniconda3/condabin:/mnt/c/Users/bkorecic/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/bkorecic/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64/:/mnt/c/tools/neovim/Neovim/bin:/mnt/c/Users/bkorecic/AppData/Roaming/npm:/mnt/c/Users/bkorecic/go/bin:/mnt/c/Users/bkorecic/AppData/Local/Pandoc/:/home/bkorecic/.local/bin:/usr/share/texlive/
+# makefile (from 'Makefile', line 15)
+OBJECTS_XBW = XBW/TrieNode.o XBW/XBW.o  
+# makefile (from 'Makefile', line 7)
+OBJECTS_CODER = utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o
+# environment
+NVM_BIN = /home/bkorecic/.nvm/versions/node/v15.14.0/bin
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-16c413ed-9c30-42fd-893b-ed8b919b09e0.sock
+# makefile (from 'Makefile', line 5)
+LIB = libcds/lib/libcds.a
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = ow=01;36;40
+# environment
+SSH_AUTH_SOCK = /mnt/c/temp/ssh-agent.sock
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /mnt/c/Users/bkorecic/Desktop/home/imfd/libCSD64
+# default
+.LOADED := 
+# environment
+WT_SESSION = b08b479b-82ec-445a-8822-0d916662dbe9
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
+# environment
+HOME = /home/bkorecic
+# environment
+LOGNAME = bkorecic
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+NVM_CD_FLAGS = -q
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = bkorecic
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 17)
+EXES = Build.o Test.o
+# environment
+NAME = Code
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/bkorecic/.vscode/extensions/ms-vscode-remote.remote-wsl-0.63.13
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/c/Users/bkorecic/AppData/Local/Programs/Microsoft VS Code
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/bkorecic/.nvm
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 13)
+OBJECTS_HUFFMAN = Huffman/huff.o Huffman/Huffman.o
+# environment
+WT_PROFILE_ID = {07b52e3e-de2c-5db4-bd2d-ba144ed6c273}
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 14)
+OBJECTS_FMINDEX = FMIndex/SuffixArray.o FMIndex/SSA.o
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 8)
+OBJECTS_UTILS = utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o $(OBJECTS_CODER) 
+# environment
+EDITOR = nvim
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# makefile (from 'Makefile', line 11)
+OBJECTS_REPAIR = RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 3)
+FLAGS = -Wall -g -DNDEBUG -fsanitize=integer -fsanitize=undefined -fsanitize=address -I libcds/includes/ 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /home/bkorecic/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/remote/node_modules
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 16)
+OBJECTS = $(OBJECTS_UTILS) $(OBJECTS_HUTUCKER) $(OBJECTS_HUFFMAN) $(OBJECTS_REPAIR) $(OBJECTS_HASH) $(OBJECTS_XBW) $(OBJECTS_FMINDEX) StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu-20.04
+# variable set hash-table stats:
+# Load=87/1024=8%, Rehash=0, Collisions=7/127=6%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# Hash (device 14, inode 281474979644803): 15 files, no impossibilities so far.
+# Huffman (device 14, inode 281474979644818): 6 files, no impossibilities so far.
+# utils (device 14, inode 281474979645114): 14 files, no impossibilities so far.
+# . (device 14, inode 34339947158908902): 36 files, no impossibilities.
+# RePair (device 14, inode 281474979644826): 4 files, no impossibilities so far.
+# utils/Coder (device 14, inode 281474979645115): 18 files, no impossibilities so far.
+# XBW (device 14, inode 281474979644874): 6 files, no impossibilities so far.
+# RePair/Coder (device 14, inode 281474979644827): 25 files, no impossibilities so far.
+# FMIndex (device 14, inode 281474979644798): 6 files, no impossibilities so far.
+# HuTucker (device 14, inode 281474979644815): 3 files, no impossibilities so far.
+
+# 133 files, no impossibilities in 10 directories.
+
+# Implicit Rules
+
+%.o: %.cpp
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+utils/Coder/BinaryNode.o: utils/Coder/BinaryNode.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/Coder/BinaryNode'
+#  Last modified 2022-01-04 05:50:16.6132568
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+XBW/XBW.o: XBW/XBW.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'XBW/XBW'
+#  Last modified 2022-01-04 05:50:29.8567997
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+utils/Coder/DecodingTable.o: utils/Coder/DecodingTable.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/Coder/DecodingTable'
+#  Last modified 2022-01-04 05:50:14.6287748
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+all: utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o HuTucker/HuTucker.o Huffman/huff.o Huffman/Huffman.o RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o XBW/TrieNode.o XBW/XBW.o FMIndex/SuffixArray.o FMIndex/SSA.o StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o Build.o Test.o Build Test
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o HuTucker/HuTucker.o Huffman/huff.o Huffman/Huffman.o RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o XBW/TrieNode.o XBW/XBW.o FMIndex/SuffixArray.o FMIndex/SSA.o StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o Build.o Test.o Build Test
+# automatic
+# | := 
+# automatic
+# < := utils/VByte.o
+# automatic
+# ^ := utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o HuTucker/HuTucker.o Huffman/huff.o Huffman/Huffman.o RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o XBW/TrieNode.o XBW/XBW.o FMIndex/SuffixArray.o FMIndex/SSA.o StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o Build.o Test.o Build Test
+# automatic
+# ? := utils/VByte.o utils/LogSequence.o utils/DAC_VLS.o utils/DAC_BVLS.o utils/Coder/StatCoder.o utils/Coder/DecodingTableBuilder.o utils/Coder/DecodingTable.o utils/Coder/DecodingTree.o utils/Coder/BinaryNode.o HuTucker/HuTucker.o Huffman/huff.o Huffman/Huffman.o RePair/Coder/arrayg.o RePair/Coder/basics.o RePair/Coder/hash.o RePair/Coder/heap.o RePair/Coder/records.o RePair/Coder/dictionary.o RePair/Coder/IRePair.o RePair/Coder/CRePair.o RePair/RePair.o Hash/Hash.o Hash/HashDAC.o Hash/Hashdh.o Hash/HashBdh.o Hash/HashBBdh.o XBW/TrieNode.o XBW/XBW.o FMIndex/SuffixArray.o FMIndex/SSA.o StringDictionary.o StringDictionaryPFC.o StringDictionaryHHTFC.o StringDictionaryRPHTFC.o Build.o Test.o Build Test
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'Makefile', line 26):
+	@echo " [MSG] Done compiling tests"
+	@echo " [FLG] $(FLAGS)"
+	
+
+HuTucker/HuTucker.o: HuTucker/HuTucker.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'HuTucker/HuTucker'
+#  Last modified 2022-01-04 05:50:17.6654099
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+utils/VByte.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-30 10:53:33.1310888
+#  File has been updated.
+#  Successfully updated.
+
+RePair/Coder/dictionary.o: RePair/Coder/dictionary.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/dictionary'
+#  Last modified 2022-01-04 05:50:21.0603849
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+Hash/Hash.o: Hash/Hash.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Hash/Hash'
+#  Last modified 2022-01-04 05:50:24.2761848
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+Huffman/Huffman.o: Huffman/Huffman.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Huffman/Huffman'
+#  Last modified 2022-01-04 05:50:19.446465
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+StringDictionary.o: StringDictionary.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'StringDictionary'
+#  Last modified 2022-01-04 05:50:32.5239493
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+utils/Coder/DecodingTree.o: utils/Coder/DecodingTree.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/Coder/DecodingTree'
+#  Last modified 2022-01-04 05:50:15.666382
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+StringDictionaryRPHTFC.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 05:47:57.7374863
+#  File has been updated.
+#  Successfully updated.
+
+RePair/Coder/arrayg.o: RePair/Coder/arrayg.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/arrayg'
+#  Last modified 2022-01-04 05:50:19.6964423
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+utils/Coder/DecodingTableBuilder.o: utils/Coder/DecodingTableBuilder.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/Coder/DecodingTableBuilder'
+#  Last modified 2022-01-04 05:50:13.3275996
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+utils/DAC_BVLS.o: utils/DAC_BVLS.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/DAC_BVLS'
+#  Last modified 2022-01-04 05:50:11.1444002
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+RePair/Coder/basics.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9848595
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/DAC_VLS.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:51.1797322
+#  File has been updated.
+#  Successfully updated.
+
+FMIndex/SuffixArray.o: FMIndex/SuffixArray.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'FMIndex/SuffixArray'
+#  Last modified 2022-01-04 05:50:30.2383012
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 04:55:01.085653
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+RePair/RePair.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:50.0324214
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+RePair/Coder/heap.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:50.014437
+#  File has been updated.
+#  Successfully updated.
+
+Test.o: Test.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Test'
+#  Last modified 2022-01-04 05:50:41.60939
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+Test:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-04 05:50:44.1186609
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	$(CPP) $(FLAGS) -o Test Test.o $(OBJECTS) ${LIB}
+
+# Not a target:
+Hash/Hashdh.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9273157
+#  File has been updated.
+#  Successfully updated.
+
+Build:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-04 05:50:42.8035545
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
+	$(CPP) $(FLAGS) -o Build Build.o $(OBJECTS) ${LIB}
+	
+
+StringDictionaryHHTFC.o: StringDictionaryHHTFC.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'StringDictionaryHHTFC'
+#  Last modified 2022-01-04 05:50:36.6684743
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+Build.o: Build.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Build'
+#  Last modified 2022-01-04 05:50:39.8163315
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+RePair/Coder/CRePair.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9522923
+#  File has been updated.
+#  Successfully updated.
+
+utils/LogSequence.o: utils/LogSequence.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/LogSequence'
+#  Last modified 2022-01-04 05:50:09.0983569
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+StringDictionaryPFC.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 03:07:02.2311576
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Hash/HashBBdh.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.8903434
+#  File has been updated.
+#  Successfully updated.
+
+Hash/HashDAC.o: Hash/HashDAC.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Hash/HashDAC'
+#  Last modified 2022-01-04 05:50:25.1986594
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+FMIndex/SSA.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.8603728
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+XBW/TrieNode.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:50.1712952
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+RePair/Coder/hash.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9998436
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+HuTucker/HuTucker.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 05:45:23.9787201
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Huffman/huff.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 05:42:38.7697956
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/Coder/StatCoder.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 05:43:14.0253422
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+RePair/Coder/IRePair.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9672785
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+RePair/Coder/records.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:50.0214307
+#  File has been updated.
+#  Successfully updated.
+
+utils/VByte.o: utils/VByte.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/VByte'
+#  Last modified 2022-01-04 05:50:07.666512
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+Hash/HashBdh.o: Hash/HashBdh.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Hash/HashBdh'
+#  Last modified 2022-01-04 05:50:26.90768
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+utils/Coder/BinaryNode.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 05:46:05.8343341
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+XBW/XBW.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:50.1782897
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/Coder/DecodingTable.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-31 07:07:13.0842105
+#  File has been updated.
+#  Successfully updated.
+
+StringDictionaryRPHTFC.o: StringDictionaryRPHTFC.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'StringDictionaryRPHTFC'
+#  Last modified 2022-01-04 05:50:38.4284547
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+	@echo " [CLN] Removing object files"
+	@rm -f  $(BIN) $(OBJECTS) $(EXES) *~ iterators/*~ FMIndex/*~ Hash/*~ Huffman/*~ RePair/*~ utils/*~ XBW/*~ 
+
+RePair/Coder/basics.o: RePair/Coder/basics.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/basics'
+#  Last modified 2022-01-04 05:50:19.910298
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+utils/DAC_VLS.o: utils/DAC_VLS.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/DAC_VLS'
+#  Last modified 2022-01-04 05:50:10.1853216
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+RePair/Coder/dictionary.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9918506
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Hash/Hash.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.8803529
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Huffman/Huffman.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 05:44:13.4008219
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+StringDictionary.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-31 07:38:02.1036425
+#  File has been updated.
+#  Successfully updated.
+
+RePair/RePair.o: RePair/RePair.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/RePair'
+#  Last modified 2022-01-04 05:50:23.3656668
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+RePair/Coder/heap.o: RePair/Coder/heap.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/heap'
+#  Last modified 2022-01-04 05:50:20.5621733
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+utils/Coder/DecodingTree.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:51.1617504
+#  File has been updated.
+#  Successfully updated.
+
+Hash/Hashdh.o: Hash/Hashdh.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Hash/Hashdh'
+#  Last modified 2022-01-04 05:50:26.0587783
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+RePair/Coder/arrayg.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9742726
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/Coder/DecodingTableBuilder.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:51.1537568
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/DAC_BVLS.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:51.1677439
+#  File has been updated.
+#  Successfully updated.
+
+RePair/Coder/CRePair.o: RePair/Coder/CRePair.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/CRePair'
+#  Last modified 2022-01-04 05:50:22.4415258
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+FMIndex/SuffixArray.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.8683661
+#  File has been updated.
+#  Successfully updated.
+
+StringDictionaryPFC.o: StringDictionaryPFC.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'StringDictionaryPFC'
+#  Last modified 2022-01-04 05:50:34.8063693
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+Hash/HashBBdh.o: Hash/HashBBdh.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Hash/HashBBdh'
+#  Last modified 2022-01-04 05:50:27.8399924
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+FMIndex/SSA.o: FMIndex/SSA.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'FMIndex/SSA'
+#  Last modified 2022-01-04 05:50:31.2629398
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+Test.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 03:43:33.3143586
+#  File has been updated.
+#  Successfully updated.
+
+XBW/TrieNode.o: XBW/TrieNode.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'XBW/TrieNode'
+#  Last modified 2022-01-04 05:50:28.9720677
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+StringDictionaryHHTFC.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 05:49:50.8438095
+#  File has been updated.
+#  Successfully updated.
+
+RePair/Coder/hash.o: RePair/Coder/hash.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/hash'
+#  Last modified 2022-01-04 05:50:20.1984872
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+Build.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-04 04:48:14.7074823
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Hash/HashBdh.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9023338
+#  File has been updated.
+#  Successfully updated.
+
+Huffman/huff.o: Huffman/huff.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Huffman/huff'
+#  Last modified 2022-01-04 05:50:18.5266851
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+utils/LogSequence.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:51.1937193
+#  File has been updated.
+#  Successfully updated.
+
+utils/Coder/StatCoder.o: utils/Coder/StatCoder.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/Coder/StatCoder'
+#  Last modified 2022-01-04 05:50:12.1512507
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+RePair/Coder/IRePair.o: RePair/Coder/IRePair.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/IRePair'
+#  Last modified 2022-01-04 05:50:21.4058103
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# Not a target:
+Hash/HashDAC.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 04:37:49.9153267
+#  File has been updated.
+#  Successfully updated.
+
+RePair/Coder/records.o: RePair/Coder/records.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'RePair/Coder/records'
+#  Last modified 2022-01-04 05:50:20.8226054
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@echo " [C++] Compiling $<"
+	@$(CPP) $(FLAGS) -c $< -o $@
+
+# files hash-table stats:
+# Load=79/1024=8%, Rehash=0, Collisions=8/239=3%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 218 / storage = 3284 B / avg = 15 B
+# current buf: size = 8162 B / used = 3284 B / count = 218 / avg = 15 B
+
+# strcache performance: lookups = 308 / hit rate = 29%
+# hash-table stats:
+# Load=218/8192=3%, Rehash=0, Collisions=13/308=4%
+# Finished Make data base on Tue Jan  4 10:07:42 2022
+
+ 
