@@ -31,10 +31,10 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include "heap.h"
 
 Theap 
-Heap::createHeap (int u, Trarray *Rec, float factor, int minsize) 
+Heap::createHeap (uint64_t u, Trarray *Rec, float factor, uint64_t minsize) 
 {
     Theap H;
-    int i;
+    uint64_t i;
     H.sqrtu = 2;
     while (H.sqrtu * H.sqrtu < u) H.sqrtu++;
     H.infreq = (Tarray*)malloc(H.sqrtu * sizeof(Tarray));
@@ -56,7 +56,7 @@ Heap::createHeap (int u, Trarray *Rec, float factor, int minsize)
 void 
 Heap::destroyHeap (Theap *H) 
 {
-    int i;
+    uint64_t i;
 //    Thfreq *l,*n;
     for (i=1;i<H->sqrtu;i++) ArrayG::destroyArray(&H->infreq[i]);
     free (H->infreq); H->infreq = NULL;
@@ -67,9 +67,9 @@ Heap::destroyHeap (Theap *H)
 }
 
 void 
-Heap::move (Tarray A, int i, int j, Trecord *rec)
+Heap::move (Tarray A, int64_t i, int64_t j, Trecord *rec)
 {
-    int id = A.pairs[j];
+    int64_t id = A.pairs[j];
     A.pairs[i] = id;
     rec[id].hpos = i;
 }
@@ -79,8 +79,8 @@ Heap::prnH (Theap *H)
 {
     Thfreq *f;
     static int X = 0;
-    int prevf = 1<<30;
-    int fp = H->largest;
+    int64_t prevf = 1<<60;
+    int64_t fp = H->largest;
     if (fp == -1) return;
     X++;
     printf ("Heap %i = \n",X);
@@ -95,17 +95,17 @@ Heap::prnH (Theap *H)
 }
 
 void 
-Heap::incFreq (Theap *H, int id) 
+Heap::incFreq (Theap *H, int64_t id) 
 {
     Trecord *rec = H->Rec->records;
     Thnode *p;
     Thfreq *f,*lf;
-    int fp,lfp;
+    int64_t fp,lfp;
 	
     if ((rec[id].pair.left == 0) || (rec[id].pair.right == 0)) return;
 
-    int freq = rec[id].freq++;
-    int hpos = rec[id].hpos;
+    int64_t freq = rec[id].freq++;
+    int64_t hpos = rec[id].hpos;
 	
 if (PRNH) prnH(H);
     if (freq >= H->sqrtu) // high freq part, hpos is a ptr within freq
@@ -196,7 +196,7 @@ if (PRNH) prnH(H);
 }
 
 void 
-Heap::decFreq (Theap *H, int id) 
+Heap::decFreq (Theap *H, int64_t id) 
 {
     Trecord *rec = H->Rec->records;
     int freq = rec[id].freq--;
@@ -284,21 +284,21 @@ if (PRNH) prnH(H);
 }
 
 void 
-Heap::insertHeap (Theap *H, int id)  
+Heap::insertHeap (Theap *H, int64_t id)  
 {
     Trecord *rec = H->Rec->records;
     rec[id].hpos = ArrayG::insertArray (&H->infreq[1],id);
     rec[id].freq = 1;
 }
 
-int 
+int64_t 
 Heap::extractMax (Theap *H)
 {
 //***    Trecord *rec = H->Rec->records;
-    int ret;
+    int64_t ret;
     Thnode *p;
     Thfreq *f;
-    int fp;
+    int64_t fp;
 if (PRNH) prnH(H);
     if ((H->max == H->sqrtu) && (H->largest == -1)) H->max--;
     if (H->max < H->sqrtu)
@@ -334,7 +334,7 @@ Heap::purgeHeap (Theap *H)
 {
 //    Trecord *rec = H->Rec->records;
 //    int i,id,fst,size,max;
-    int id,fst,size,max;
+    int64_t id,fst,size,max;
     size = H->infreq[1].size;
     fst = H->infreq[1].fst;
     max = H->infreq[1].maxsize;
@@ -347,7 +347,7 @@ Heap::purgeHeap (Theap *H)
 }
 
 void 
-Heap::heapRepos (Theap *H, int id) 
+Heap::heapRepos (Theap *H, int64_t id) 
 {
     Trecord *rec = H->Rec->records;
     if (rec[id].freq < H->sqrtu) 

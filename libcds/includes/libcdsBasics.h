@@ -50,6 +50,7 @@ namespace cds_utils
 
     /** number of bits in a uint */
     const uint W = 32;
+    const uint W64 = 64;
     /** W-1 */
     const uint Wminusone = 31;
 
@@ -116,9 +117,19 @@ namespace cds_utils
         e[p/W] |= (1<<(p%W));
     }
 
+    /** sets bit p in e (64 bit) */
+    inline void bitset(uint64_t * e, size_t p) {
+        e[p/W64] |= (1ULL<<(p%W64));
+    }
+
     /** cleans bit p in e */
     inline void bitclean(uint * e, size_t p) {
         e[p/W] &= ~(1<<(p%W));
+    }
+
+    /** cleans bit p in e (64 bit) */
+    inline void bitclean(uint64_t * e, size_t p) {
+        e[p/W64] &= ~(1ULL<<(p%W64));
     }
 
     /** uints required to represent n integers of e bits each */

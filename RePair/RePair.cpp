@@ -50,7 +50,7 @@ RePair::RePair(int *sequence, uint64_t length, uchar maxchar)
 	// Building the array for the dictionary
 	G = new LogSequence(bits(rules+terminals), 2*rules);
 
-	for (uint i=0; i<rules; i++)
+	for (uint64_t i=0; i<rules; i++)
 	{
 		G->setField(2*i, dicc->rules[i].rule.left);
 		G->setField((2*i)+1, dicc->rules[i].rule.right);

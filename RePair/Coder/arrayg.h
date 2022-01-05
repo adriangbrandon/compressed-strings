@@ -31,12 +31,12 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include "basics.h"
 
 typedef struct
-   { int *pairs; // identifiers
-     int maxsize;  
-     int size;
-     int fst; // first of circular array
+   { int64_t *pairs; // identifiers
+     int64_t maxsize;  
+     int64_t size;
+     int64_t fst; // first of circular array
      float factor;
-     int minsize;
+     int64_t minsize;
      void *Rec; // records
    } Tarray;
 
@@ -45,12 +45,12 @@ class ArrayG
 {
 public:
 	// creates empty array
-	static Tarray createArray (void *Rec, float factor, int minsize);
+	static Tarray createArray (void *Rec, float factor, int64_t minsize);
 	// destroys A
 	static void destroyArray (Tarray *A);
 
 	// inserts pair in A, returns pos
-	static int insertArray (Tarray *A, int pair);
+	static int64_t insertArray (Tarray *A, int64_t pair);
 	 // deletes last cell in A
 	static void deleteArray (Tarray *A);	
 };

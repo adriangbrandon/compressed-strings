@@ -29,22 +29,22 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include "arrayg.h"
 #include "records.h"
 
-int 
-ArrayG::insertArray (Tarray *A, int pair)
+int64_t
+ArrayG::insertArray (Tarray *A, int64_t pair)
 {
-     int *npairs;
-     int max,size,i,pos,id,fst;
+     int64_t *npairs;
+     int64_t max,size,i,pos,id,fst;
      Trecord *rec = ((Trarray*)A->Rec)->records;
      if (A->size == A->maxsize)
 	{ if (A->maxsize == 0)
 	     { A->maxsize = A->minsize;
-	       A->pairs = (int*)malloc (A->maxsize * sizeof(int));
+	       A->pairs = (int64_t*)malloc (A->maxsize * sizeof(int64_t));
 	       A->fst = 0;
 	     }
 	  else
 	     { max = A->maxsize;
 	       A->maxsize /= A->factor;
-	       npairs = (int*)malloc (A->maxsize * sizeof(int));
+	       npairs = (int64_t*)malloc (A->maxsize * sizeof(int64_t));
 	       size = A->size;
 	       fst = A->fst;
 	       for (i=0;i<size;i++)
@@ -68,8 +68,8 @@ ArrayG::insertArray (Tarray *A, int pair)
 void 
 ArrayG::deleteArray (Tarray *A)
 {
-     int *npairs;
-     int size,i,id,max,fst;
+     int64_t *npairs;
+     int64_t size,i,id,max,fst;
      Trecord *rec = ((Trarray*)A->Rec)->records;
      A->fst = (A->fst+1) % A->maxsize;
      A->size--;
@@ -83,7 +83,7 @@ ArrayG::deleteArray (Tarray *A)
 	      (A->maxsize * A->factor >= A->minsize))
 	{ max = A->maxsize;
 	  A->maxsize *= A->factor;
-	  npairs = (int*)malloc (A->maxsize * sizeof(int));
+	  npairs = (int64_t*)malloc (A->maxsize * sizeof(int64_t));
 	  size = A->size;
 	  fst = A->fst;
 	  for (i=0;i<size;i++)
@@ -99,7 +99,7 @@ ArrayG::deleteArray (Tarray *A)
 }
    
 Tarray 
-ArrayG::createArray(void *Rec, float factor, int minsize)
+ArrayG::createArray(void *Rec, float factor, int64_t minsize)
 {
      Tarray A;
      A.Rec = Rec;

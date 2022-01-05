@@ -34,6 +34,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <cstdint>
 
 #include "basics.h"
 #include "records.h"
@@ -52,12 +53,12 @@ class IRePair
 {
 public:
 	IRePair(){};
-	int compress(int *text, unsigned int length, size_t *csymbols, size_t *crules, Tdiccarray **rules);
+	int compress(int *text, uint64_t length, size_t *csymbols, size_t *crules, Tdiccarray **rules);
 
 private:
-	int u;		// |text| and later current |C| with gaps
+	uint64_t u;		// |text| and later current |C| with gaps
 	int *C; 		// compressed text
-	int c;  		// real |C|
+	uint64_t c;  		// real |C|
 	int alph;	// max used terminal symbol
 	int n; 		// |R|
 	Tlist *L; 	// |L| = c;
@@ -69,7 +70,7 @@ private:
 	int repair();
 	int expand (int i, int d);
 
-	void prepare(int len);
+	void prepare(uint64_t len);
 	void prnSym(int c);
 	void prnC(void);
 	void prnRec(void);

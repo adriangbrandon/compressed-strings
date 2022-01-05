@@ -30,7 +30,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include "IRePair.h"
 
 int 
-IRePair::compress(int *text, unsigned int length, size_t *csymbols, size_t *crules, Tdiccarray **rules)
+IRePair::compress(int *text, uint64_t length, size_t *csymbols, size_t *crules, Tdiccarray **rules)
 {
      C = text;
      prepare (length);
@@ -204,9 +204,10 @@ if (PRNC) prnC();
 
 
 void
-IRePair::prepare(int len)
+IRePair::prepare(uint64_t len)
 {
-    int i,id;
+    uint64_t i;
+	int id;
     Tpair pair;
     c = u = len;
     alph = 0;
