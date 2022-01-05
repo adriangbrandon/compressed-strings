@@ -32,7 +32,7 @@ namespace cds_static
 	unsigned int nb;
 	unsigned int ns;
 	unsigned int countB, countS, blockIndex, superblockIndex;
-	register unsigned int block;
+	unsigned int block;
 
 
 	this->nn = (n/W)+1;
@@ -94,7 +94,7 @@ namespace cds_static
     {
         if(((int)position+1)==0) return 0;
 
-	register unsigned int block;    
+	unsigned int block;    
 	if (position > n) return pop;	
 	block = data[position/32] << (31-position%32);
 

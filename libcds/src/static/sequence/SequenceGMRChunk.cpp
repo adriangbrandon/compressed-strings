@@ -61,7 +61,7 @@ SequenceGMRChunk::SequenceGMRChunk(uint * sequence, uint chunk_length, BitSequen
   delete [] X_bitmap;
   this->permutation = pmb->build(pi,chunk_length); 
   assert(permutation!=NULL);
-  this->sigma = sigma;
+  //this->sigma = sigma;
 	delete [] counter;
 }
 
@@ -103,7 +103,7 @@ SequenceGMRChunk::SequenceGMRChunk(const Array & sequence, BitSequenceBuilder *b
   delete [] X_bitmap;
   this->permutation = pmb->build(pi,chunk_length); 
   assert(permutation!=NULL);
-  this->sigma = sigma;
+  //this->sigma = sigma;
 	delete [] counter;
 }
 SequenceGMRChunk::SequenceGMRChunk() : Sequence(0) {

@@ -280,25 +280,26 @@ namespace cds_static{
 		return 0;
 	}
 
-	ulong locate_extract(void *index){
-	CSA *SA=(CSA *) index;
-	ulong largo,*occ,lar,n=SA->n,l,r,lll=0;
-	ulong matches,locate;
-	ulong random,hh;
-	for ( hh=1; hh <= 1000000; hh*=10)
-	 for (lar=1;lar<=9;lar++) {
-		 largo=lar*hh;
-		 occ=NULL;
-		 random = (ulong) (((float) rand()/ (float) RAND_MAX)*(n-1));
-		 matches = largo+1;
-		 locate=0;
-		 occ = (ulong *) malloc(matches*sizeof(ulong));
-		 l=random;
-		 r=min(random+largo,n-3);
-		 occ = csa_batchlookup2(SA,l,r);
-		 free(occ);
-	 }
-	 return lll;
+	ulong locate_extract(void *index) {
+		CSA *SA = (CSA *)index;
+		ulong largo, *occ, lar, n = SA->n, l, r, lll = 0;
+		ulong matches, locate;
+		ulong random, hh;
+		for (hh = 1; hh <= 1000000; hh *= 10) {
+			for (lar = 1; lar <= 9; lar++) {
+				largo = lar * hh;
+				occ = NULL;
+				random = (ulong)(((float)rand() / (float)RAND_MAX) * (n - 1));
+				matches = largo + 1;
+				locate = 0;
+				occ = (ulong *)malloc(matches * sizeof(ulong));
+				l = random;
+				r = min(random + largo, n - 3);
+				occ = csa_batchlookup2(SA, l, r);
+				free(occ);
+			}
+		}
+		return lll;
 	}
 
 	int locate(void *index, uchar *pattern, ulong length, ulong **occ, ulong *numocc){
