@@ -84,3 +84,4 @@ db/*
 # Project executables
 Build
 Test
+Test-single
