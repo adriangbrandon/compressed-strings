@@ -48,7 +48,7 @@ StringDictionary::load(ifstream & fp, uint opt)
 		//case RPHTFC:		return StringDictionaryRPHTFC::load(fp);
 
 		//case RPDAC:		return StringDictionaryRPDAC::load(fp);
-		//case FMINDEX:		return StringDictionaryFMINDEX::load(fp);
+		case FMINDEX:		return StringDictionaryFMINDEX::load(fp);
 		//case DXBW:		return StringDictionaryXBW::load(fp);
 	}
 

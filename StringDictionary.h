@@ -158,7 +158,7 @@ class StringDictionary
 #include "StringDictionaryRPHTFC.h"
 
 //#include "StringDictionaryRPDAC.h"
-//#include "StringDictionaryFMINDEX.h"
+#include "StringDictionaryFMINDEX.h"
 //#include "StringDictionaryXBW.h"
 
 #endif  

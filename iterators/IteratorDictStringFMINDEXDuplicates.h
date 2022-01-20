@@ -59,7 +59,7 @@ class IteratorDictStringFMINDEXDuplicates : public IteratorDictString
 		/** Checks for non-processed strings in the stream. 
 		    @returns if remains non-processed strings. 
 		*/
-	   	bool hasNext()
+	   	bool hasNext() override
 		{
 			return processed<scanneable; 
 		}
@@ -70,7 +70,7 @@ class IteratorDictStringFMINDEXDuplicates : public IteratorDictString
 		    @param strLen: pointer to the string length.
 		    @returns the next string.
 		*/
-		unsigned char* next(uint *strLen) 
+		unsigned char* next(uint_fast32_t *strLen) override
 		{
 			size_t next = ids[processed];
 

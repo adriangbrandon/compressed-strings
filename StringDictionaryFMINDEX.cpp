@@ -59,7 +59,7 @@ StringDictionaryFMINDEX::StringDictionaryFMINDEX(
 	}
 
 	uchar *strCurrent=NULL;
-	uint lenCurrent=0;
+	uint_fast32_t lenCurrent=0;
 	size_t processed = 0;
 
 	text[processed] = '\1';	 processed++;	//We suppose that \1 is not part of the text

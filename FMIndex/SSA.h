@@ -59,7 +59,7 @@ using namespace cds_static;
 			uint locate(uchar * pattern, uint m, size_t **occs);
 			uint locateP(uchar * pattern, uint m, size_t *left, size_t *right, size_t last);
 
-			uchar * extract_id(uint id, uint *strLen, uint max_len);
+			uchar * extract_id(uint64_t id, uint_fast32_t *strLen, uint_fast32_t max_len);
 			static SSA * load(ifstream & fp);
 			void save(ofstream & fp);
 

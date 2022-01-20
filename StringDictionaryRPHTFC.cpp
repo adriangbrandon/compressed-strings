@@ -55,6 +55,7 @@ StringDictionaryRPHTFC::StringDictionaryRPHTFC(IteratorDictString *it, uint32_t 
 	}
 	else this->bucketsize = bucketsize;
 
+	cerr << "1) Bulding the Front-Coding representation" << endl;
 	// 1) Bulding the Front-Coding representation
 	StringDictionaryPFC *dict = new StringDictionaryPFC(it, this->bucketsize);
 	this->maxlength = dict->maxlength;
@@ -62,6 +63,8 @@ StringDictionaryRPHTFC::StringDictionaryRPHTFC(IteratorDictString *it, uint32_t 
 	this->buckets = dict->buckets;
 	this->maxcomplength = 0;
 
+
+	cerr << "2) Obtaining the char frequencies and building the Hu-Tucker tree" << endl;
 	// 2) Obtaining the char frequencies and building the Hu-Tucker tree
 	//    and the Re-Pair encoding of the internal strings.
 	uint64_t *freqs = new uint64_t[256];
@@ -119,9 +122,11 @@ StringDictionaryRPHTFC::StringDictionaryRPHTFC(IteratorDictString *it, uint32_t 
 		}		
 	}
 
+	cerr << "Obtaining the HuTucker code" << endl;
 	// Obtaining the HuTucker code
 	HuTucker *ht = new HuTucker(freqs);
 
+	cerr << "Initializing the HuTucker builder" << endl;
 	// Initializing the HuTucker builder
 	DecodingTableBuilder *builderHT = new DecodingTableBuilder();
 	builderHT->initializeFromHuTucker(ht);
@@ -129,6 +134,7 @@ StringDictionaryRPHTFC::StringDictionaryRPHTFC(IteratorDictString *it, uint32_t 
 	delete [] freqs; delete ht;
 	delete dict;
 
+	cerr << "Obtaining the Re-Pair encoding" << endl;
 	// Obtaining the Re-Pair encoding
 	rp = new RePair(rpdict, ptrpdict, 255);
 	bitsrp = rp->getBits();
@@ -168,6 +174,7 @@ StringDictionaryRPHTFC::StringDictionaryRPHTFC(IteratorDictString *it, uint32_t 
 	beginnings[1+strings/(bucketsize-1)] = ibytes;
 	delete [] rpdict;
 
+	cerr << "3) Compressing the dictionary and building the decoding table" << endl;
 	// 3) Compressing the dictionary and building the decoding table
 	{
 		vector<size_t> xblStrings;

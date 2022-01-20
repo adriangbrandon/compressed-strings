@@ -373,10 +373,10 @@
 		return rank_tmp -1 + occ[c];
 	}
 
-	uchar * SSA::extract_id(uint id, uint *strLen, uint max_len){
+	uchar * SSA::extract_id(uint64_t id, uint_fast32_t *strLen, uint_fast32_t max_len){
 		uchar *res = new uchar[max_len+2];
-		uint i = id;
-		uint pos = max_len+1;
+		uint64_t i = id;
+		uint_fast32_t pos = max_len+1;
 		res[pos] = '\0';
 		pos--;
 		*strLen =0;

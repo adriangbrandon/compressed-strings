@@ -283,7 +283,7 @@ void runExtractPrefix(unique_ptr<StringDictionary> &dict, char* in)
 
 			while (it->hasNext())
 			{
-				uint strLen;
+				uint_fast32_t strLen;
 				uchar *str = it->next(&strLen);
 				delete [] str;
 				extracted++;
@@ -407,7 +407,7 @@ void runExtractSubstring(unique_ptr<StringDictionary> &dict, char* in)
 
 			while (it->hasNext())
 			{
-				uint strLen;
+				uint_fast32_t strLen;
 				uchar *str = it->next(&strLen);
 				delete [] str;
 				extracted++;

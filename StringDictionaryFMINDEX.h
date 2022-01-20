@@ -92,7 +92,7 @@ class StringDictionaryFMINDEX : public StringDictionary
 	    	@param strLen: the prefix length.
 	    	@returns an iterator for direct scanning of all the IDs.
 		 */
-		IteratorDictID* locatePrefix(uchar *str, uint strLen);
+		IteratorDictID* locatePrefix(uchar *str, uint strLen) override;
 
 		/** Locates all IDs of those elements containing the given
 	    	substring.
@@ -100,27 +100,27 @@ class StringDictionaryFMINDEX : public StringDictionary
 	    	@param strLen: the substring length.
 	    	@returns an iterator for direct scanning of all the IDs.
 		 */
-		IteratorDictID* locateSubstr(uchar *str, uint strLen);
+		IteratorDictID* locateSubstr(uchar *str, uint strLen) override;
 
 		/** Retrieves the ID with rank k according to its alphabetical order.
 	    	@param rank: the alphabetical ranking.
 	    	@returns the ID.
 		 */
-		uint locateRank(uint rank);
+		uint locateRank(uint rank) override;
 
 		/** Extracts all elements prefixed by the given string.
 	    	@param str: the prefix to be searched.
 	    	@param strLen: the prefix length.
 	    	@returns an iterator for direct scanning of all the strings.
 		 */
-		IteratorDictString* extractPrefix(uchar *str, uint strLen);
+		IteratorDictString* extractPrefix(uchar *str, uint strLen) override;
 
 		/** Extracts all elements containing by the given substring.
 	    	@param str: the substring to be searched.
 	    	@param strLen: the substring length.
 	    	@returns an iterator for direct scanning of all the strings.
 		 */
-		IteratorDictString* extractSubstr(uchar *str, uint_fast32_t strLen);
+		IteratorDictString* extractSubstr(uchar *str, uint_fast32_t strLen) override;
 
 		/** Obtains the string  with rank k according to its
 	    	alphabetical order.
@@ -129,23 +129,23 @@ class StringDictionaryFMINDEX : public StringDictionary
 	    	@returns the requested string (or NULL if it is not in the
 	      	  dictionary).
 		*/
-		uchar* extractRank(uint64_t rank, uint_fast32_t *strLen);
+		uchar* extractRank(uint64_t rank, uint_fast32_t *strLen) override;
 
 		/** Extracts all strings in the dictionary sorted in
 	    	alphabetical order.
 	    	@returns an iterator for direct scanning of all the strings.
 		 */
-		IteratorDictString* extractTable();
+		IteratorDictString* extractTable() override;
 
 		/** Computes the size of the structure in bytes.
 	    	@returns the dictionary size in bytes.
 		 */
-		size_t getSize();
+		size_t getSize() override;
 
 		/** Stores the dictionary into an ofstream.
 	    	@param out: the oftstream.
 		*/
-		void save(ofstream &out);
+		void save(ofstream &out) override;
 
 		/** Loads a dictionary from an ifstream.
 	    	@param in: the ifstream.

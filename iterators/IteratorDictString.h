@@ -47,7 +47,7 @@ class IteratorDictString
 		    @param strLen pointer to the string length.
 		    @returns the next string.
 		*/
-	   	virtual unsigned char* next(uint *str_length)=0;
+	   	virtual unsigned char* next(uint_fast32_t *str_length)=0;
 
 		/** Generic destructor. */
 		virtual ~IteratorDictString() {} ;

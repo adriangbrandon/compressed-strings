@@ -59,7 +59,7 @@ StringDictionaryPFC::StringDictionaryPFC(IteratorDictString *it, uint_fast32_t b
 
 	// Bulding the Front-Coding representation
 	uchar *strCurrent=NULL, *strPrev=NULL;
-	uint lenCurrent=0, lenPrev=0;
+	uint_fast32_t lenCurrent=0, lenPrev=0;
 
 	// Variables for strings management
 	uint64_t reservedStrings = MEMALLOC*bucketsize;

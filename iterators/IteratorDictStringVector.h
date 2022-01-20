@@ -53,7 +53,7 @@ class IteratorDictStringVector : public IteratorDictString
 		    @param strLen pointer to the string length.
 		    @returns the next string.
 		*/
-		unsigned char* next(uint *str_length) 
+		unsigned char* next(uint_fast32_t *str_length) 
 		{
 			processed++;
 
