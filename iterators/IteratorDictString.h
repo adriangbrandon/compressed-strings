@@ -73,8 +73,8 @@ class IteratorDictString
 //#include "IteratorDictStringRPDAC.h"
 //#include "IteratorDictStringXBW.h"
 //#include "IteratorDictStringXBWDuplicates.h"
-//#include "IteratorDictStringFMINDEX.h"
-//#include "IteratorDictStringFMINDEXDuplicates.h"
+#include "IteratorDictStringFMINDEX.h"
+#include "IteratorDictStringFMINDEXDuplicates.h"
 
 
 #endif  
