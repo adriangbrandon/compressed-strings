@@ -57,8 +57,8 @@ uint
 VByte::decode(uint_fast32_t *c, uchar *r)
 {
 	*c = 0;
-	register int i = 0;
-	register int shift = 0;
+	int i = 0;
+	int shift = 0;
 
 	while ( !(r[i] & 0x80) )
 	{

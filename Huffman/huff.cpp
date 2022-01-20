@@ -158,8 +158,8 @@
         return H;
     }
 
-    void bitzero (register uint *e, register size_t p,
-    register uint len) {
+    void bitzero (uint *e, size_t p,
+    uint len) {
 
         e += p/W; p %= W;
         if (p+len >= W) {
