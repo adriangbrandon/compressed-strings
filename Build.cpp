@@ -365,7 +365,6 @@ main(int argc, char* argv[])
 			}
 			*/
 
-			/*
 			case 6:
 			{
 				if (argc != 7) { useBuild(); break; }
@@ -418,7 +417,6 @@ main(int argc, char* argv[])
 
 				break;
 			}
-			*/
 
 			/*
 			case 7:
