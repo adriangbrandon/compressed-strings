@@ -79,14 +79,14 @@ Heap::prnH (Theap *H)
 {
     Thfreq *f;
     static int X = 0;
-    int64_t prevf = 1<<60;
+    int64_t prevf = 1ULL<<60;
     int64_t fp = H->largest;
     if (fp == -1) return;
     X++;
     printf ("Heap %i = \n",X);
     while (fp != -1)
        { f = &H->ff[fp];
-         printf ("freq=%i, elems=%i\n",f->freq,f->elems);
+         printf ("freq=%lu, elems=%ld\n",f->freq,f->elems);
 	 if (prevf <= f->freq)
 	    { fp++; }
 	 prevf = f->freq;

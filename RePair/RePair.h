@@ -28,8 +28,6 @@
 #ifndef REPAIR_H_
 #define REPAIR_H_
 
-using namespace std;
-
 #include <libcdsBasics.h>
 using namespace cds_utils;
 
@@ -66,24 +64,24 @@ class RePair
 		    @param out: the oftstream.
 		    @param encoding: encoding mode (log bits or DAC)
 		*/
-		void save(ofstream &out, uint encoding);
+		void save(std::ofstream &out, uint encoding);
 
 		/** Stores the dictionary into an ofstream.
 		    @param out: the oftstream.
 		*/
-		void save(ofstream &out);
+		void save(std::ofstream &out);
 
 		/** Loads a RePair encoding from an ifstream.
 		    @param in: the ifstream.
 		    @returns the loaded dictionary.
 		*/
-		static RePair *load(ifstream &in);
+		static RePair *load(std::ifstream &in);
 
 		/** Loads a RePair encoding (without sequence) from an ifstream.
 		    @param in: the ifstream.
 		    @returns the loaded dictionary.
 		*/
-		static RePair* loadNoSeq(ifstream &in);
+		static RePair* loadNoSeq(std::ifstream &in);
 
 		// Generic destructor
 		~RePair();

@@ -237,7 +237,7 @@ IRePair::prepare(uint64_t len)
 	     }
 	  L[i].prev = -id-1;
 	  Rec.records[id].cpos = i;
-if (PRNL && (i%10000 == 0)) printf ("Processed %i chars\n",i);
+if (PRNL && (i%10000 == 0)) printf ("Processed %lu chars\n",i);
 	}
     Heap::purgeHeap (&Heap);
 }
@@ -253,7 +253,7 @@ void
 IRePair::prnC(void)
 {
     int i = 0;
-    printf ("C[1..%i] = ",c);
+    printf ("C[1..%lu] = ",c);
     while (i<u)
       { prnSym(C[i]);
   	printf (" ");

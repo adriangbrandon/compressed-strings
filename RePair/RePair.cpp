@@ -27,6 +27,8 @@
 
 #include "RePair.h"
 
+using namespace std;
+
 RePair::RePair()
 {
 	this->G = NULL;
