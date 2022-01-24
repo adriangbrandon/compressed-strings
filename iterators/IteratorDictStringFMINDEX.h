@@ -84,7 +84,7 @@ class IteratorDictStringFMINDEX : public IteratorDictString
 
 	protected:
 		SSA *fm_index;	// Self-index
-		uint maxlength;	// String maxlength
+		uint_fast32_t maxlength;	// String maxlength
 		size_t last;	// Last id in the dictionary
 };
 

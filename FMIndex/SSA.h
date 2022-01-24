@@ -41,7 +41,7 @@ using namespace cds_static;
 
 	class SSA{
 		public:
-			SSA(uchar * seq, uint n, bool free_text=false, uint samplesuff=0);
+			SSA(uchar * seq, uint64_t n, bool free_text=false, uint samplesuff=0);
 			SSA();
 			~SSA();
 
@@ -50,12 +50,12 @@ using namespace cds_static;
 
 			bool build_index();
 
-			uint size();
+			uint64_t size();
 			void print_stats();
-			uint length();
+			uint64_t length();
 
 			uint LF(uint i);
-			uint locate_id(uchar * pattern, uint m);
+			uint64_t locate_id(uchar * pattern, uint_fast32_t m);
 			uint locate(uchar * pattern, uint m, size_t **occs);
 			uint locateP(uchar * pattern, uint m, size_t *left, size_t *right, size_t last);
 
@@ -64,14 +64,14 @@ using namespace cds_static;
 			void save(ofstream & fp);
 
 		protected:
-			uint n;
+			uint64_t n;
 			Sequence * bwt;
 
 			BitSequence * sampled;
 			uint * suff_sample;
 			uint samplesuff;			// Suffix sampling
 
-			uint * occ;
+			uint64_t * occ;
 			uint maxV;
 			bool built;
 			bool free_text;

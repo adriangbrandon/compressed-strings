@@ -44,11 +44,11 @@ namespace cds_static
     }
 
     wt_coder_huff::wt_coder_huff(uchar * symbs, size_t n, Mapper * am) {
-        for(uint i=0;i<n;i++)
+        for(uint64_t i=0;i<n;i++)
             symbs[i] = (uchar)am->map((uint)symbs[i]);
         hc = new HuffmanCoder(symbs, n);
         maxBuffer = hc->maxLength()/W+1;
-        for(uint i=0;i<n;i++)
+        for(uint64_t i=0;i<n;i++)
             symbs[i] = (uchar)am->unmap((uint)symbs[i]);
     }
 

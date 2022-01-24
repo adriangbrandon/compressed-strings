@@ -53,12 +53,12 @@ class IteratorDictString
 		virtual ~IteratorDictString() {} ;
 
 		/** Returns the stream size */
-		uint size() { return scanneable; }
+		uint64_t size() { return scanneable; }
 
 
 	protected:
-		size_t processed;	// Number of processed strings
-		size_t scanneable;	// Upper limit of the stream
+		uint64_t processed;	// Number of processed strings
+		uint64_t scanneable;	// Upper limit of the stream
 		uint maxlength;		// Largest string length
 };
 

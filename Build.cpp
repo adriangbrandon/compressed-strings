@@ -373,7 +373,7 @@ main(int argc, char* argv[])
 				if (in.good())
 				{
 					in.seekg(0,ios_base::end);
-					uint lenStr = in.tellg()/sizeof(uchar);
+					uint64_t lenStr = in.tellg()/sizeof(uchar);
 					in.seekg(0,ios_base::beg);
 
 					uchar *str = loadValue<uchar>(in, lenStr);

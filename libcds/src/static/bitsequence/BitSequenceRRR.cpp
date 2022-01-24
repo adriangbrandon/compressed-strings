@@ -70,7 +70,7 @@ namespace cds_static
         }
 
         // Table O
-        O_len = uint_len(1,O_bits_len);
+        O_len = uint_len((uint)1,O_bits_len);
         O = new uint[O_len];
         for(uint i=0;i<O_len;i++)
             O[i] = 0;

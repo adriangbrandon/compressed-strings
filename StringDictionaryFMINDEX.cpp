@@ -46,13 +46,13 @@ StringDictionaryFMINDEX::StringDictionaryFMINDEX(
 	this->maxlength = 0;
 	this->BWTsampling = BWTsampling;
 
-	size_t len = it->size();
+	uint64_t len = it->size();
 	uchar *text = new uchar[len+2];
 	uint *bitmap=0;
 
 	if(BWTsampling > 0)
 	{
-		bitmap = new uint[(len+1+W)/W];
+		bitmap = new uint[(len+1+W)/W]; // ceil((len+2)/W)
 		for(uint i=0; i<(len+1+W)/W; i++)
 			bitmap[i]=0;
 		bitset(bitmap, 0);
@@ -60,7 +60,7 @@ StringDictionaryFMINDEX::StringDictionaryFMINDEX(
 
 	uchar *strCurrent=NULL;
 	uint_fast32_t lenCurrent=0;
-	size_t processed = 0;
+	uint64_t processed = 0;
 
 	text[processed] = '\1';	 processed++;	//We suppose that \1 is not part of the text
 	text[len+1]='\0'; 			//end of the text
@@ -109,7 +109,7 @@ uint64_t
 StringDictionaryFMINDEX::locate(uchar *str, uint_fast32_t strLen)
 {
 	uchar *n_s = new uchar[strLen+2];
-	uint o;
+	uint64_t o;
 	n_s[0] = '\1';
 	for(size_t i=1; i<=strLen; i++) n_s[i] = str[i-1];
 	n_s[strLen+1] = '\1';
@@ -265,7 +265,7 @@ StringDictionaryFMINDEX::load(ifstream &in)
 }
 
 void
-StringDictionaryFMINDEX::build_ssa(uchar *text, size_t len, bool sparse_bitsequence, int bparam)
+StringDictionaryFMINDEX::build_ssa(uchar *text, uint64_t len, bool sparse_bitsequence, int bparam)
 {
 	fm_index = new SSA((uchar *)text,len, false, BWTsampling);
 	Mapper * am = new MapperNone();

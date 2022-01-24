@@ -27,7 +27,7 @@
 #include "SSA.h"
 
 
-	SSA::SSA(uchar *text, uint n, bool free_text, uint samplesuff) {
+	SSA::SSA(uchar *text, uint64_t n, bool free_text, uint samplesuff) {
 		assert(n>0);
 
 		// Initial values and default constructors
@@ -94,9 +94,9 @@
 
 	SSA * SSA::load(ifstream & fp){
 		SSA *fm = new SSA();
-		fm->n = loadValue<uint>(fp);
+		fm->n = loadValue<uint64_t>(fp);
 		fm->maxV = loadValue<uint>(fp);
-		fm->occ = loadValue<uint>(fp, fm->maxV+1);
+		fm->occ = loadValue<uint64_t>(fp, fm->maxV+1);
 		fm->bwt = Sequence::load(fp); 
 		fm->samplesuff = loadValue<uint>(fp);
 
@@ -111,7 +111,7 @@
 		return fm;
 	}
 
-	uint SSA::length() {
+	uint64_t SSA::length() {
 		return n;
 	}
 
@@ -129,10 +129,10 @@
 	}
 
 
-	uint SSA::size() {
-		uint size = bwt->getSize();
+	uint64_t SSA::size() {
+		uint64_t size = bwt->getSize();
 		if(samplesuff > 0){
-			size += sizeof(uint)*(1+n/samplesuff);
+			size += sizeof(uint64_t)*(1+n/samplesuff);
 			size += sampled->getSize();
 		}
 		size += sizeof(bool)*(256);
@@ -192,17 +192,17 @@
 		bwt = (_ssb->build(_bwt,n+1));
 
 		maxV = 0;
-		for(uint i=0;i<n+1;i++){
+		for(uint64_t i=0;i<n+1;i++){
 			alphabet[_bwt[i]]=true;
 			maxV = max(_bwt[i],maxV);
 		}
 		maxV++;
 
-		occ = new uint[maxV+1];
+		occ = new uint64_t[maxV+1];
 		for(uint i=0;i<maxV+1;i++)
 			occ[i]=0;
 
-		for(uint i=0;i<=n;i++)
+		for(uint64_t i=0;i<=n;i++)
 			occ[_bwt[i]+1]++;
 
 		for(uint i=1;i<=maxV;i++)
@@ -226,18 +226,18 @@
 			delete [] _bwt;
 		_bwt = new uint[n+2];
 		build_sa();
-		for(uint i=0;i<n+1;i++) {
+		for(uint64_t i=0;i<n+1;i++) {
 			if(_sa[i]==0) _bwt[i]=0;
 			else _bwt[i] = _seq[_sa[i]-1];
 		}
 	
 		if (samplesuff > 0)
 		{
-			uint j=0;
+			uint64_t j=0;
 			uint * sampled_vector = new uint[uint_len(n+2,1)];
 			suff_sample = new uint[(n+1)/samplesuff+1];
-			for(uint i=0;i<uint_len(n+1,1);i++) sampled_vector[i] = 0;
-			for(uint i=0;i<n+1;i++) {
+			for(uint64_t i=0;i<uint_len(n+1,1);i++) sampled_vector[i] = 0;
+			for(uint64_t i=0;i<n+1;i++) {
 				if(_sa[i]%samplesuff==0) {
 					suff_sample[j++]=(uint)_sa[i];
 					bitset(sampled_vector,i);
@@ -263,15 +263,15 @@
 		_sa = (ulong *)sa_i;
 		delete suffix;
 		assert(_sa[0]==n);
-		for(ulong i=0;i<n;i++)
+		for(uint64_t i=0;i<n;i++)
 			assert(cmp((uint)_sa[i],(uint)_sa[i+1])<=0);
 	}
 
-	uint SSA::locate_id(uchar * pattern, uint m) {
-		ulong i=m-1;
+	uint64_t SSA::locate_id(uchar * pattern, uint_fast32_t m) {
+		uint_fast32_t i=m-1;
 		uint c = pattern[i];
-		uint sp = occ[c];
-		uint ep = occ[c+1]-1;
+		uint64_t sp = occ[c];
+		uint64_t ep = occ[c+1]-1;
 		while (sp<=ep && i>=1) {
 			c = pattern[--i];
 			if(!alphabet[c]){
