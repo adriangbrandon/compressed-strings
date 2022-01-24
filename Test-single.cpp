@@ -15,23 +15,25 @@ string prog;
 map <string, uint32_t> ext_map = {
     {"pfc", PFC},
     {"hhtfc", HHTFC},
-    {"rphtfc", RPHTFC}};
+    {"rphtfc", RPHTFC},
+    {"fmi", FMINDEX},
+    };
 
 void printUsage(){
-    cout << "Usage: " << endl;
-    cout << prog << " <compressed-dict> <uncompressed-dict>" << endl;
+    cerr << "Usage: " << endl;
+    cerr << prog << " <compressed-dict> <uncompressed-dict>" << endl;
     exit(1);
 }
 
 void printBar(int progress){
     int left = progress*BAR_WIDTH/100;
     int right = BAR_WIDTH - left;
-    if(progress < 10) cout << " ";
-    cout << progress << "% [";
-    for(int i=0; i<left; i++) cout << "|";
-    for(int i=0; i<right; i++) cout << " ";
-    cout << "]\n";
-    cout.flush();
+    if(progress < 10) cerr << " ";
+    cerr << '\r' << progress << "% [";
+    for(int i=0; i<left; i++) cerr << BAR_CHAR;
+    for(int i=0; i<right; i++) cerr << " ";
+    cerr << "]";
+    cerr.flush();
 }
 
 uint64_t getStreamSize(ifstream &st){
@@ -128,6 +130,7 @@ int main(int argc, char *argv[]){
             printBar(progress);
         }
     }
+    cerr << '\n';
     steady_clock::time_point testEnd = steady_clock::now();
     
 
