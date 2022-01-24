@@ -5,6 +5,7 @@
 obj/*
 bin/*
 build/
+Build/
 
 ### C++ ###
 # Prerequisites
@@ -80,9 +81,3 @@ db/*
 # dictionary files
 *.dat
 *.pfc
-
-# Project executables
-Build
-Test
-Test-single
-Test-substr
