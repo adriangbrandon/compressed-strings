@@ -27,6 +27,8 @@
 
 #include "StringDictionary.h"
 
+using namespace std;
+
 unique_ptr<StringDictionary>
 StringDictionary::load(ifstream & fp, uint opt)
 {

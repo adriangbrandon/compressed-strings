@@ -28,8 +28,6 @@
 #ifndef _STRINGDICTIONARY_H
 #define _STRINGDICTIONARY_H
 
-using namespace std;
-
 #include <libcdsBasics.h>
 #include <memory>
 using namespace cds_utils;
@@ -134,7 +132,7 @@ class StringDictionary
 		    @param opt: some dicionaries have some different options for loading
 		    @returns the loaded dictionary.
 		*/
-		static unique_ptr<StringDictionary> load(ifstream &in, uint opt);
+		static std::unique_ptr<StringDictionary> load(ifstream &in, uint opt);
 
 		/** Generic destructor. */
 		virtual ~StringDictionary() {};
