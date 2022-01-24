@@ -85,3 +85,4 @@ db/*
 Build
 Test
 Test-single
+Test-substr
