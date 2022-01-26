@@ -264,7 +264,7 @@
 		delete suffix;
 		assert(_sa[0]==n);
 		for(uint64_t i=0;i<n;i++)
-			assert(cmp((uint)_sa[i],(uint)_sa[i+1])<=0);
+			assert(cmp(_sa[i],_sa[i+1])<=0);
 	}
 
 	uint64_t SSA::locate_id(uchar * pattern, uint_fast32_t m) {
@@ -397,10 +397,10 @@
 		return res;
 	}
 
-	int SSA::cmp(uint i, uint j) {
+	int64_t SSA::cmp(uint64_t i, uint64_t j) {
 		while(i<n && j<n) {
 			if(_seq[i]!=_seq[j])
-				return (int)_seq[i]-_seq[j];
+				return (int64_t)_seq[i]-_seq[j];
 			i++; j++;
 		}
 		assert(i!=j);

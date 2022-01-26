@@ -87,7 +87,7 @@ using namespace cds_static;
 
 			void build_bwt();
 			void build_sa();
-			int cmp(uint i, uint j);
+			int64_t cmp(uint64_t i, uint64_t j);
 
 		friend class StringDictionaryFMINDEX;
 	};
