@@ -56,5 +56,5 @@ typedef struct {
 MMAP *mymmap(char *fname);
 int mymunmap(MMAP *m);
 
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

@@ -66,5 +66,5 @@ class BitSequenceDArray : public BitSequence {
      */
     BitSequenceDArray();
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

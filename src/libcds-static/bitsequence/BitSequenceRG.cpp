@@ -383,4 +383,4 @@ size_t BitSequenceRG::select0(const size_t x1) const {
     else
         return left;
 }
-};  // namespace cds_static
+}  // namespace cds_static

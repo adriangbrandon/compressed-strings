@@ -116,7 +116,7 @@ class BitSequence {
     size_t ones;
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/bitsequence/BitSequence375.h"
 #include "libcds-static/bitsequence/BitSequenceDArray.h"

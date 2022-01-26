@@ -39,6 +39,6 @@ class SequenceBuilderAlphPart : public SequenceBuilder {
     SequenceBuilder* indexBuilder;
     uint cut;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

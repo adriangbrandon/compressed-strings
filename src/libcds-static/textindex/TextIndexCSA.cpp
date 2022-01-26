@@ -92,4 +92,4 @@ TextIndexCSA *TextIndexCSA::load(ifstream &fp) {
     return ticsa;
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

@@ -428,4 +428,4 @@ char *error_index(int e) {
     return error;
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

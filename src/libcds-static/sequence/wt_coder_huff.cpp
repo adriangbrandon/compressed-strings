@@ -84,4 +84,4 @@ wt_coder_huff* wt_coder_huff::load(ifstream& fp) {
     ret->maxBuffer = ret->hc->maxLength() / W + 1;
     return ret;
 }
-};  // namespace cds_static
+}  // namespace cds_static

@@ -70,6 +70,6 @@ class SequenceGMR : public Sequence {
     BitSequence* B;
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

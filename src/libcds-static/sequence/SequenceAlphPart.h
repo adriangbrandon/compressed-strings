@@ -79,6 +79,6 @@ class SequenceAlphPart : public Sequence {
     uint maxLen;
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif /* _SEQUENCEALPHPART_H */

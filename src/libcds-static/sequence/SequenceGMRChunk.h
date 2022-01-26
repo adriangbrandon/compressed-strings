@@ -77,5 +77,5 @@ class SequenceGMRChunk : public Sequence {
 
     SequenceGMRChunk();
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

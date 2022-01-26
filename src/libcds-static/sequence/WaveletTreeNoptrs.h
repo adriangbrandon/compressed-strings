@@ -109,5 +109,5 @@ class WaveletTreeNoptrs : public Sequence {
     void build_level(uint **bm, uint *symbols, unsigned width, uint level,
                      uint length, uint offset);
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

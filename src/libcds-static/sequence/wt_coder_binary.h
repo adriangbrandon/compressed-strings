@@ -53,5 +53,5 @@ class wt_coder_binary : public wt_coder {
     wt_coder_binary();
     uint h;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

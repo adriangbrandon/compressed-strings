@@ -35,4 +35,4 @@ BitSequence* BitSequenceBuilderRG::build(const BitString& bs) const {
     return new BitSequenceRG(bs, factor);
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

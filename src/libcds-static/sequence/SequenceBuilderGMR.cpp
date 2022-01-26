@@ -57,4 +57,4 @@ Sequence* SequenceBuilderGMR::build(const Array& seq) {
     cl = max(cl, (uint)64);
     return new SequenceGMR(seq, cl, bsb, sqb);
 }
-};  // namespace cds_static
+}  // namespace cds_static

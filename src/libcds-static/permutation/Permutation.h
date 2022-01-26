@@ -63,7 +63,7 @@ class Permutation {
    protected:
     size_t length;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #define MRRRPERM 1
 

@@ -35,4 +35,4 @@ BitSequence* BitSequenceBuilderSDArray::build(const BitString& bs) const {
     return new BitSequenceSDArray(bs);
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

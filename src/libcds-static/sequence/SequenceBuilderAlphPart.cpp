@@ -45,4 +45,4 @@ Sequence* SequenceBuilderAlphPart::build(uint* sequence, size_t len) {
 Sequence* SequenceBuilderAlphPart::build(const Array& seq) {
     return new SequenceAlphPart(seq, cut, groupIndexBuilder, indexBuilder);
 }
-};  // namespace cds_static
+}  // namespace cds_static

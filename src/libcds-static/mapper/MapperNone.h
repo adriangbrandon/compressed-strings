@@ -45,5 +45,5 @@ class MapperNone : public Mapper {
     virtual void save(ofstream& out) const;
     static MapperNone* load(ifstream& input);
 };
-};     // namespace cds_static
+}     // namespace cds_static
 #endif /* __MAPPER_NONE_H */

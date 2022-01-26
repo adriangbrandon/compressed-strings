@@ -81,4 +81,4 @@ Sequence* Sequence::load(ifstream& fp) {
     return NULL;
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

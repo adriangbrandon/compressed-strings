@@ -71,4 +71,4 @@ wt_node_leaf *wt_node_leaf::load(ifstream &fp) {
     ret->symbol = loadValue<uint>(fp);
     return ret;
 }
-};  // namespace cds_static
+}  // namespace cds_static

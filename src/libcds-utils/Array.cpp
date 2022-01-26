@@ -128,4 +128,4 @@ void Array::initData() {
     data = new uint[uintLength];
     for (size_t i = 0; i < uintLength; i++) data[i] = 0;
 }
-};  // namespace cds_utils
+}  // namespace cds_utils

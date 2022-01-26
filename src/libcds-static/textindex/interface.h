@@ -112,4 +112,4 @@ int display(void *index, uchar *pattern, ulong length, ulong numc,
 
 int length(void *index, ulong *length);
 
-};  // namespace cds_static
+}  // namespace cds_static

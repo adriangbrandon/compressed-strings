@@ -65,7 +65,7 @@ class wt_coder {
     uint user_count;
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/sequence/wt_coder_binary.h"
 #include "libcds-static/sequence/wt_coder_huff.h"

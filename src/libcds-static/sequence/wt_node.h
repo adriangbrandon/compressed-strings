@@ -52,7 +52,7 @@ class wt_node {
     static wt_node* load(ifstream& fp);
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/sequence/wt_node_internal.h"
 #include "libcds-static/sequence/wt_node_leaf.h"

@@ -72,4 +72,4 @@ wt_coder_binary *wt_coder_binary::load(ifstream &fp) {
     ret->h = loadValue<uint>(fp);
     return ret;
 }
-};  // namespace cds_static
+}  // namespace cds_static

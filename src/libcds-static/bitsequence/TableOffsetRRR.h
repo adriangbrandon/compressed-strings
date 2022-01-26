@@ -96,5 +96,5 @@ class table_offset {
     void fill_tables();
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

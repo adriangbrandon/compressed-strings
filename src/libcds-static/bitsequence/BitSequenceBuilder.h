@@ -52,7 +52,7 @@ class BitSequenceBuilder {
    protected:
     int userCount;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/bitsequence/BitSequenceBuilder375.h"
 #include "libcds-static/bitsequence/BitSequenceBuilderDArray.h"

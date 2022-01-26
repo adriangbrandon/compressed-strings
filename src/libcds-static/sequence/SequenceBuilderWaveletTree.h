@@ -40,6 +40,6 @@ class SequenceBuilderWaveletTree : public SequenceBuilder {
     Mapper* am;
     wt_coder* wc;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

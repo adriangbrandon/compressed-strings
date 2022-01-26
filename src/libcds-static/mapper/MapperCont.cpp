@@ -69,4 +69,4 @@ MapperCont* MapperCont::load(ifstream& input) {
     }
     return ret;
 }
-};  // namespace cds_static
+}  // namespace cds_static

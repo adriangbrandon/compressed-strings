@@ -90,7 +90,7 @@ class Sequence {
     uint sigma;
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/sequence/BitmapsSequence.h"
 #include "libcds-static/sequence/SequenceAlphPart.h"

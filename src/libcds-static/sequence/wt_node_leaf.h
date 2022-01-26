@@ -52,5 +52,5 @@ class wt_node_leaf : public wt_node {
     uint symbol;
     size_t count;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

@@ -114,6 +114,6 @@ inline size_t loadText(char *filename, char **textt, size_t *length) {
     return 0;
 }
 
-};  // namespace cds_utils
+}  // namespace cds_utils
 
 #endif

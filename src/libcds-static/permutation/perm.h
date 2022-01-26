@@ -88,6 +88,6 @@ perm loadPerm(ifstream &f);
  */
 uint sizeofPerm(const perm P);
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

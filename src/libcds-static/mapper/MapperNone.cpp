@@ -41,4 +41,4 @@ MapperNone* MapperNone::load(ifstream& input) {
     if (rd != MAPPER_NONE_HDR) return NULL;
     return new MapperNone();
 }
-};  // namespace cds_static
+}  // namespace cds_static

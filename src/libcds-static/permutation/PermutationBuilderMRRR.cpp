@@ -35,4 +35,4 @@ Permutation* PermutationBuilderMRRR::build(uint* perm, uint len) const {
     return new PermutationMRRR(perm, len, sample, bmb);
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

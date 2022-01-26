@@ -42,4 +42,4 @@ Sequence* SequenceBuilderWaveletTreeNoptrs::build(uint* sequence, size_t len) {
 Sequence* SequenceBuilderWaveletTreeNoptrs::build(const Array& seq) {
     return new WaveletTreeNoptrs(seq, bsb, am);
 }
-};  // namespace cds_static
+}  // namespace cds_static

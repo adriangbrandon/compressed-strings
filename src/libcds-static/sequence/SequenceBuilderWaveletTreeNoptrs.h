@@ -38,6 +38,6 @@ class SequenceBuilderWaveletTreeNoptrs : public SequenceBuilder {
     BitSequenceBuilder* bsb;
     Mapper* am;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

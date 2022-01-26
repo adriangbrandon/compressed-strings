@@ -39,6 +39,6 @@ class SequenceBuilderGMR : public SequenceBuilder {
     SequenceBuilder* sqb;
     uint chunk_len;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

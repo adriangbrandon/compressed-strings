@@ -253,7 +253,7 @@ inline uint popcount16(const int x) {
 /** Counts the number of 1s in the first 8 bits of x */
 inline uint popcount8(const int x) { return __popcount_tab[x & 0xff]; }
 
-};  // namespace cds_utils
+}  // namespace cds_utils
 
 #include "libcds-utils/cppUtils.h"
 #endif /* _BASICS_H */

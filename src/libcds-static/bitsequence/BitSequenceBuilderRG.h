@@ -41,5 +41,5 @@ class BitSequenceBuilderRG : public BitSequenceBuilder {
    protected:
     uint factor;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

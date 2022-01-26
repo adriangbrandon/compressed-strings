@@ -471,4 +471,4 @@ size_t WaveletTreeNoptrs::count(uint symbol) const {
            1;
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

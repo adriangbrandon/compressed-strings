@@ -304,4 +304,4 @@ BitSequenceDArray *BitSequenceDArray::load(ifstream &fp) {
     return ret;
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

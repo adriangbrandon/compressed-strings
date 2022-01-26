@@ -61,4 +61,4 @@ void BitString::save(ofstream& out) const {
     out.write((char*)data, uintLength * sizeof(uint));
 }
 
-};  // namespace cds_utils
+}  // namespace cds_utils

@@ -58,5 +58,5 @@ class wt_node_internal : public wt_node {
     BitSequence *bitmap;
     // uint length;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

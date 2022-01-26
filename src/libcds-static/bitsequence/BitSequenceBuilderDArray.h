@@ -41,5 +41,5 @@ class BitSequenceBuilderDArray : public BitSequenceBuilder {
     virtual BitSequence* build(uint* bitseq, size_t len) const;
     virtual BitSequence* build(const BitString& bs) const;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

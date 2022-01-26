@@ -29,4 +29,4 @@ BitSequence* BitSequenceBuilder375::build(uint* bitseq, size_t len) const {
 BitSequence* BitSequenceBuilder375::build(const BitString& bs) const {
     return new BitSequence375(bs.getData(), bs.getLength());
 }
-};  // namespace cds_static
+}  // namespace cds_static

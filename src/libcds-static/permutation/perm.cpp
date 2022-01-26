@@ -203,4 +203,4 @@ uint sizeofPerm(perm P) {
            ((uint_len(P->nbwdptrs, P->nbits)) * sizeof(uint));
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

@@ -38,6 +38,6 @@ class SequenceBuilderGMRChunk : public SequenceBuilder {
     BitSequenceBuilder* bsb;
     PermutationBuilder* pmb;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

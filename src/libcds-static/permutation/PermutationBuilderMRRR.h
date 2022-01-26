@@ -37,6 +37,6 @@ class PermutationBuilderMRRR : public PermutationBuilder {
     uint sample;
     BitSequenceBuilder* bmb;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

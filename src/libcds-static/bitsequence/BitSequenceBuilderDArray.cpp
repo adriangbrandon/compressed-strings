@@ -34,4 +34,4 @@ BitSequence* BitSequenceBuilderDArray::build(uint* bitseq, size_t len) const {
 BitSequence* BitSequenceBuilderDArray::build(const BitString& bs) const {
     return new BitSequenceDArray(bs);
 }
-};  // namespace cds_static
+}  // namespace cds_static

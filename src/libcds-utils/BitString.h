@@ -96,5 +96,5 @@ class BitString {
     /** Initializes the class fields */
     void initData(const size_t len);
 };
-};  // namespace cds_utils
+}  // namespace cds_utils
 #endif

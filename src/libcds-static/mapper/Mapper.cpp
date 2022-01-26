@@ -45,4 +45,4 @@ Mapper* Mapper::load(ifstream& input) {
     }
     return NULL;
 }
-};  // namespace cds_static
+}  // namespace cds_static

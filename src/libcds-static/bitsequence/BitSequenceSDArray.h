@@ -51,5 +51,5 @@ class BitSequenceSDArray : public BitSequence {
     selects3 sd;
     BitSequenceSDArray();
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

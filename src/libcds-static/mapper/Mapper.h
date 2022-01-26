@@ -60,7 +60,7 @@ class Mapper {
     /** Nr of references */
     int userCount;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/mapper/MapperCont.h"
 #include "libcds-static/mapper/MapperNone.h"

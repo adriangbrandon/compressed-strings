@@ -41,6 +41,6 @@ class PermutationBuilder {
    protected:
     int userCount;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

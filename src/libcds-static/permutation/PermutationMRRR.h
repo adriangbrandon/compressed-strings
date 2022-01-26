@@ -53,6 +53,6 @@ class PermutationMRRR : public Permutation {
     PermutationMRRR();
 };
 
-};  // namespace cds_static
+}  // namespace cds_static
 
 #endif

@@ -35,4 +35,4 @@ BitSequence* BitSequenceBuilderRRR::build(const BitString& bs) const {
     return new BitSequenceRRR(bs, sample_rate);
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

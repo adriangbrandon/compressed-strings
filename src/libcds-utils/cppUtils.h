@@ -51,5 +51,5 @@ T* loadValue(const char* name, size_t& slen) {
     return ret;
 }
 
-};  // namespace cds_utils
+}  // namespace cds_utils
 #endif

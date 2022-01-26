@@ -1144,4 +1144,4 @@ end:
     return len;
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

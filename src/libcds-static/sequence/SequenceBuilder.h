@@ -42,7 +42,7 @@ class SequenceBuilder {
    protected:
     int userCount;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 
 #include "libcds-static/sequence/SequenceBuilderAlphPart.h"
 #include "libcds-static/sequence/SequenceBuilderGMR.h"

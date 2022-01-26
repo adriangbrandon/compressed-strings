@@ -58,5 +58,5 @@ class MapperCont : public Mapper {
     BitSequence* m;
 };
 
-};     // namespace cds_static
+}     // namespace cds_static
 #endif /* _MAPPERCONT_H */

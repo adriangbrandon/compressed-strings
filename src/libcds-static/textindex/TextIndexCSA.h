@@ -104,5 +104,5 @@ class TextIndexCSA : public TextIndex {
     /** Reads a text index determining the type */
     static TextIndexCSA *load(ifstream &fp);
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

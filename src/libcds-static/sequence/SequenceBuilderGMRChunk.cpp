@@ -43,4 +43,4 @@ Sequence* SequenceBuilderGMRChunk::build(const Array& seq) {
     return new SequenceGMRChunk(seq, bsb, pmb);
 }
 
-};  // namespace cds_static
+}  // namespace cds_static

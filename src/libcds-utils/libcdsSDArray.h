@@ -178,6 +178,6 @@ inline unsigned int __popCount8(const uint x) {
     return r;
 }
 
-};  // namespace cds_utils
+}  // namespace cds_utils
 
 #endif

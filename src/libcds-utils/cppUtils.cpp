@@ -13,4 +13,4 @@ uint transform(const string& s) {
     return ret;
 }
 
-};  // namespace cds_utils
+}  // namespace cds_utils

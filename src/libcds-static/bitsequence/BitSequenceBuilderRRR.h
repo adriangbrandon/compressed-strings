@@ -43,5 +43,5 @@ class BitSequenceBuilderRRR : public BitSequenceBuilder {
    protected:
     uint sample_rate;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

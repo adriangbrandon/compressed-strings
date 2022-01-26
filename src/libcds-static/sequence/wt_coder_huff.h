@@ -53,5 +53,5 @@ class wt_coder_huff : public wt_coder {
     Huffman *hc;
     uint maxBuffer;
 };
-};  // namespace cds_static
+}  // namespace cds_static
 #endif

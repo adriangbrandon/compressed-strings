@@ -223,4 +223,4 @@ size_t BitSequence375::select0(const size_t x1) const {
 
     return pos - 1;
 }
-};  // namespace cds_static
+}  // namespace cds_static

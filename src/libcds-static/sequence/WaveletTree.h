@@ -104,5 +104,5 @@ class WaveletTree : public Sequence {
     bool test;
 };
 
-};     // namespace cds_static
+}     // namespace cds_static
 #endif /* _STATIC_SEQUENCE_WVTREE_H */
