@@ -19,54 +19,46 @@
  *
  */
 
-#include "libcds-utils/libcdsBasics.h"
 #include "libcds-utils/BitString.h"
 
-namespace cds_utils
-{
+#include "libcds-utils/libcdsBasics.h"
 
-    BitString::BitString(ifstream & input) {
-        assert(input.good());
-        input.read((char*)&length,sizeof(size_t));
-        input.read((char*)&uintLength,sizeof(size_t));
-        data = new uint[uintLength];
-        input.read((char*)data,uintLength*sizeof(uint));
-    }
+namespace cds_utils {
 
-    void BitString::initData(const size_t len) {
-        length = len;
-        uintLength = length/W+1;
-        data = new uint[uintLength];
-        for(uint i=0;i<uintLength;i++)
-            data[i] = 0;
-    }
+BitString::BitString(ifstream& input) {
+    assert(input.good());
+    input.read((char*)&length, sizeof(size_t));
+    input.read((char*)&uintLength, sizeof(size_t));
+    data = new uint[uintLength];
+    input.read((char*)data, uintLength * sizeof(uint));
+}
 
-    BitString::BitString(const size_t len) {
-        initData(len);
-    }
+void BitString::initData(const size_t len) {
+    length = len;
+    uintLength = length / W + 1;
+    data = new uint[uintLength];
+    for (uint i = 0; i < uintLength; i++) data[i] = 0;
+}
 
-    BitString::BitString(const vector<uint> fields, const size_t len) {
-        initData(len);
-        for(size_t i=0; i<uintLength; i++)
-            data[i] = fields[i];
-    }
+BitString::BitString(const size_t len) { initData(len); }
 
-    BitString::BitString(const uint * array, const size_t len) {
-        initData(len);
-        for(size_t i=0; i<uintLength; i++)
-            data[i] = array[i];
-    }
+BitString::BitString(const vector<uint> fields, const size_t len) {
+    initData(len);
+    for (size_t i = 0; i < uintLength; i++) data[i] = fields[i];
+}
 
-    BitString::~BitString() {
-        delete [] data;
-    }
+BitString::BitString(const uint* array, const size_t len) {
+    initData(len);
+    for (size_t i = 0; i < uintLength; i++) data[i] = array[i];
+}
 
-    void BitString::save(ofstream & out) const
-    {
-        assert(out.good());
-        out.write((char*)&length,sizeof(size_t));
-        out.write((char*)&uintLength,sizeof(size_t));
-        out.write((char*)data,uintLength*sizeof(uint));
-    }
+BitString::~BitString() { delete[] data; }
 
-};
+void BitString::save(ofstream& out) const {
+    assert(out.good());
+    out.write((char*)&length, sizeof(size_t));
+    out.write((char*)&uintLength, sizeof(size_t));
+    out.write((char*)data, uintLength * sizeof(uint));
+}
+
+};  // namespace cds_utils

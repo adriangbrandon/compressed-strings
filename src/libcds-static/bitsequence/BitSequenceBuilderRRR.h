@@ -22,27 +22,26 @@
 #ifndef BITSEQUENCEBUILDERRRR_H
 #define BITSEQUENCEBUILDERRRR_H
 
-#include "libcds-utils/libcdsBasics.h"
-#include "libcds-static/bitsequence/BitSequenceRRR.h"
 #include "libcds-static/bitsequence/BitSequenceBuilder.h"
+#include "libcds-static/bitsequence/BitSequenceRRR.h"
+#include "libcds-utils/libcdsBasics.h"
 
 using namespace cds_utils;
 
-namespace cds_static
-{
-    /** BitSequence builder for RRR BitSequences.
-     *
-     * @author Francisco Claude
-     */
-    class BitSequenceBuilderRRR : public BitSequenceBuilder
-    {
-        public:
-            BitSequenceBuilderRRR(uint sample_rate);
-            virtual ~BitSequenceBuilderRRR() {}
-            virtual BitSequence * build(uint * bitseq, size_t len) const;
-            virtual BitSequence * build(const BitString & bs) const;
-        protected:
-            uint sample_rate;
-    };
+namespace cds_static {
+/** BitSequence builder for RRR BitSequences.
+ *
+ * @author Francisco Claude
+ */
+class BitSequenceBuilderRRR : public BitSequenceBuilder {
+   public:
+    BitSequenceBuilderRRR(uint sample_rate);
+    virtual ~BitSequenceBuilderRRR() {}
+    virtual BitSequence* build(uint* bitseq, size_t len) const;
+    virtual BitSequence* build(const BitString& bs) const;
+
+   protected:
+    uint sample_rate;
 };
+};  // namespace cds_static
 #endif

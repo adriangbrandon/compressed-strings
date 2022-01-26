@@ -23,102 +23,93 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 */
 
-	// extendible array for pairs
+// extendible array for pairs
+
+#include "arrayg.h"
 
 #include <stdlib.h>
-#include "arrayg.h"
+
 #include "records.h"
 
-int64_t
-ArrayG::insertArray (Tarray *A, int64_t pair)
-{
-     int64_t *npairs;
-     int64_t max,size,i,pos,id,fst;
-     Trecord *rec = ((Trarray*)A->Rec)->records;
-     if (A->size == A->maxsize)
-	{ if (A->maxsize == 0)
-	     { A->maxsize = A->minsize;
-	       A->pairs = (int64_t*)malloc (A->maxsize * sizeof(int64_t));
-	       A->fst = 0;
-	     }
-	  else
-	     { max = A->maxsize;
-	       A->maxsize /= A->factor;
-	       npairs = (int64_t*)malloc (A->maxsize * sizeof(int64_t));
-	       size = A->size;
-	       fst = A->fst;
-	       for (i=0;i<size;i++)
-		  { id = A->pairs[fst];
-		    npairs[i] = id;
-		    rec[id].hpos = i;
-		    fst = (fst+1) % max;
-		  }
-	       free(A->pairs); 
-	       A->pairs = npairs;
-	       A->fst = 0;
-	     }
-	}
-     pos = (A->fst + A->size) % A->maxsize;
-     A->pairs[pos] = pair;
-     A->size++;
-     return pos;
-
+int64_t ArrayG::insertArray(Tarray *A, int64_t pair) {
+    int64_t *npairs;
+    int64_t max, size, i, pos, id, fst;
+    Trecord *rec = ((Trarray *)A->Rec)->records;
+    if (A->size == A->maxsize) {
+        if (A->maxsize == 0) {
+            A->maxsize = A->minsize;
+            A->pairs = (int64_t *)malloc(A->maxsize * sizeof(int64_t));
+            A->fst = 0;
+        } else {
+            max = A->maxsize;
+            A->maxsize /= A->factor;
+            npairs = (int64_t *)malloc(A->maxsize * sizeof(int64_t));
+            size = A->size;
+            fst = A->fst;
+            for (i = 0; i < size; i++) {
+                id = A->pairs[fst];
+                npairs[i] = id;
+                rec[id].hpos = i;
+                fst = (fst + 1) % max;
+            }
+            free(A->pairs);
+            A->pairs = npairs;
+            A->fst = 0;
+        }
+    }
+    pos = (A->fst + A->size) % A->maxsize;
+    A->pairs[pos] = pair;
+    A->size++;
+    return pos;
 }
 
-void 
-ArrayG::deleteArray (Tarray *A)
-{
-     int64_t *npairs;
-     int64_t size,i,id,max,fst;
-     Trecord *rec = ((Trarray*)A->Rec)->records;
-     A->fst = (A->fst+1) % A->maxsize;
-     A->size--;
-     if (A->size == 0)
-	{ A->maxsize = 0;
-	  free (A->pairs);
-	  A->pairs = NULL;
-	  A->fst = 0;
-	}
-     else if ((A->size < A->maxsize * A->factor * A->factor) && 
-	      (A->maxsize * A->factor >= A->minsize))
-	{ max = A->maxsize;
-	  A->maxsize *= A->factor;
-	  npairs = (int64_t*)malloc (A->maxsize * sizeof(int64_t));
-	  size = A->size;
-	  fst = A->fst;
-	  for (i=0;i<size;i++)
-	      { id = A->pairs[fst];
-		npairs[i] = id;
-		rec[id].hpos = i;
-		fst = (fst+1) % max;
-	      }
-	  free(A->pairs); 
-	  A->pairs = npairs;
-	  A->fst = 0;
-	}
-}
-   
-Tarray 
-ArrayG::createArray(void *Rec, float factor, int64_t minsize)
-{
-     Tarray A;
-     A.Rec = Rec;
-     A.pairs = NULL;
-     A.maxsize = 0;
-     A.size = 0;
-     A.fst = 0;
-     A.factor = factor;
-     A.minsize = minsize;
-     return A;
+void ArrayG::deleteArray(Tarray *A) {
+    int64_t *npairs;
+    int64_t size, i, id, max, fst;
+    Trecord *rec = ((Trarray *)A->Rec)->records;
+    A->fst = (A->fst + 1) % A->maxsize;
+    A->size--;
+    if (A->size == 0) {
+        A->maxsize = 0;
+        free(A->pairs);
+        A->pairs = NULL;
+        A->fst = 0;
+    } else if ((A->size < A->maxsize * A->factor * A->factor) &&
+               (A->maxsize * A->factor >= A->minsize)) {
+        max = A->maxsize;
+        A->maxsize *= A->factor;
+        npairs = (int64_t *)malloc(A->maxsize * sizeof(int64_t));
+        size = A->size;
+        fst = A->fst;
+        for (i = 0; i < size; i++) {
+            id = A->pairs[fst];
+            npairs[i] = id;
+            rec[id].hpos = i;
+            fst = (fst + 1) % max;
+        }
+        free(A->pairs);
+        A->pairs = npairs;
+        A->fst = 0;
+    }
 }
 
-void 
-ArrayG::destroyArray(Tarray *A)
-{
-     if (A->maxsize == 0) return;
-     free (A->pairs);
-     A->pairs = NULL;
-     A->maxsize = 0;
-     A->size = 0;
-     A->fst = 0;
+Tarray ArrayG::createArray(void *Rec, float factor, int64_t minsize) {
+    Tarray A;
+    A.Rec = Rec;
+    A.pairs = NULL;
+    A.maxsize = 0;
+    A.size = 0;
+    A.fst = 0;
+    A.factor = factor;
+    A.minsize = minsize;
+    return A;
+}
+
+void ArrayG::destroyArray(Tarray *A) {
+    if (A->maxsize == 0) return;
+    free(A->pairs);
+    A->pairs = NULL;
+    A->maxsize = 0;
+    A->size = 0;
+    A->fst = 0;
 }

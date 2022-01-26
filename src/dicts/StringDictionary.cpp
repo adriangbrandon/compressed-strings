@@ -1,6 +1,6 @@
 /* StringDictionary.cpp
- * Copyright (C) 2014, Francisco Claude & Rodrigo Canovas & Miguel A. Martinez-Prieto
- * all rights reserved.
+ * Copyright (C) 2014, Francisco Claude & Rodrigo Canovas & Miguel A.
+ * Martinez-Prieto all rights reserved.
  *
  * Abstract class for implementing Compressed String Dictionaries.
  *
@@ -29,43 +29,36 @@
 
 using namespace std;
 
-unique_ptr<StringDictionary>
-StringDictionary::load(ifstream & fp, uint opt)
-{
-	size_t r = loadValue<uint32_t>(fp);
-	fp.seekg(0, fp.beg);
+unique_ptr<StringDictionary> StringDictionary::load(ifstream& fp, uint opt) {
+    size_t r = loadValue<uint32_t>(fp);
+    fp.seekg(0, fp.beg);
 
-	switch(r)
-	{
-		//case HASHHF:		return StringDictionaryHASHHF::load(fp, opt);
-		//case HASHUFFDAC:	return StringDictionaryHASHUFFDAC::load(fp);
-		//case HASHRPF:		return StringDictionaryHASHRPF::load(fp, opt);
-		//case HASHRPDAC:		return StringDictionaryHASHRPDAC::load(fp);
+    switch (r) {
+            // case HASHHF:		return StringDictionaryHASHHF::load(fp,
+            // opt); case HASHUFFDAC:	return
+            // StringDictionaryHASHUFFDAC::load(fp);
+            // case HASHRPF:		return StringDictionaryHASHRPF::load(fp,
+            // opt); case HASHRPDAC:		return
+            // StringDictionaryHASHRPDAC::load(fp);
 
-		case PFC:		return StringDictionaryPFC::load(fp);
-		//case RPFC:		return StringDictionaryRPFC::load(fp);
+        case PFC:
+            return StringDictionaryPFC::load(fp);
+        // case RPFC:		return StringDictionaryRPFC::load(fp);
 
-		//case HTFC:		return StringDictionaryHTFC::load(fp);
-		case HHTFC:		return StringDictionaryHHTFC::load(fp);
-		//case RPHTFC:		return StringDictionaryRPHTFC::load(fp);
+        // case HTFC:		return StringDictionaryHTFC::load(fp);
+        case HHTFC:
+            return StringDictionaryHHTFC::load(fp);
+        // case RPHTFC:		return StringDictionaryRPHTFC::load(fp);
 
-		//case RPDAC:		return StringDictionaryRPDAC::load(fp);
-		case FMINDEX:		return StringDictionaryFMINDEX::load(fp);
-		//case DXBW:		return StringDictionaryXBW::load(fp);
-	}
+        // case RPDAC:		return StringDictionaryRPDAC::load(fp);
+        case FMINDEX:
+            return StringDictionaryFMINDEX::load(fp);
+            // case DXBW:		return StringDictionaryXBW::load(fp);
+    }
 
-	return NULL;
+    return NULL;
 }
 
-uint
-StringDictionary::maxLength()
-{
-	return maxlength;
-}
+uint StringDictionary::maxLength() { return maxlength; }
 
-size_t
-StringDictionary::numElements()
-{
-	return elements;
-}
-
+size_t StringDictionary::numElements() { return elements; }

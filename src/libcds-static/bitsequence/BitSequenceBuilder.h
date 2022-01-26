@@ -22,39 +22,41 @@
 #ifndef BITSEQUENCEBUILDER_H
 #define BITSEQUENCEBUILDER_H
 
-#include "libcds-utils/libcdsBasics.h"
 #include "libcds-static/bitsequence/BitSequence.h"
 #include "libcds-utils/BitString.h"
+#include "libcds-utils/libcdsBasics.h"
 
 using namespace cds_utils;
 
-namespace cds_static
-{
-    /** Base class for BitSequence builders, it defines the build function
-     * that takes only a bitmap. The parameters for construction are can
-     * be set in any way by the builder, but none are received when
-     * the actual building takes place.
-     *
-     * @author Francisco Claude
-     */
-    class BitSequenceBuilder
-    {
-        public:
-            BitSequenceBuilder() { userCount=0; }
-            virtual ~BitSequenceBuilder() {}
-            virtual void use() { userCount++; }
-            virtual void unuse() { userCount--; assert(userCount>=0); if(userCount==0) delete this; }
-            virtual BitSequence * build(uint * bitseq, size_t len) const = 0;
-            virtual BitSequence * build(const BitString & bs) const = 0;
+namespace cds_static {
+/** Base class for BitSequence builders, it defines the build function
+ * that takes only a bitmap. The parameters for construction are can
+ * be set in any way by the builder, but none are received when
+ * the actual building takes place.
+ *
+ * @author Francisco Claude
+ */
+class BitSequenceBuilder {
+   public:
+    BitSequenceBuilder() { userCount = 0; }
+    virtual ~BitSequenceBuilder() {}
+    virtual void use() { userCount++; }
+    virtual void unuse() {
+        userCount--;
+        assert(userCount >= 0);
+        if (userCount == 0) delete this;
+    }
+    virtual BitSequence* build(uint* bitseq, size_t len) const = 0;
+    virtual BitSequence* build(const BitString& bs) const = 0;
 
-        protected:
-            int userCount;
-    };
+   protected:
+    int userCount;
 };
+};  // namespace cds_static
 
-#include "libcds-static/bitsequence/BitSequenceBuilderRG.h"
 #include "libcds-static/bitsequence/BitSequenceBuilder375.h"
+#include "libcds-static/bitsequence/BitSequenceBuilderDArray.h"
+#include "libcds-static/bitsequence/BitSequenceBuilderRG.h"
 #include "libcds-static/bitsequence/BitSequenceBuilderRRR.h"
 #include "libcds-static/bitsequence/BitSequenceBuilderSDArray.h"
-#include "libcds-static/bitsequence/BitSequenceBuilderDArray.h"
 #endif

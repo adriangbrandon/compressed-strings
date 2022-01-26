@@ -22,23 +22,21 @@
 #ifndef BITSEQUENCEBUILDER375_H
 #define BITSEQUENCEBUILDER375_H
 
-#include "libcds-utils/libcdsBasics.h"
 #include "libcds-static/bitsequence/BitSequence375.h"
 #include "libcds-static/bitsequence/BitSequenceBuilder.h"
+#include "libcds-utils/libcdsBasics.h"
 
-namespace cds_static
-{
-    /** BitSequence builder for BitSequence375
-     *
-     * @author Francisco Claude
-     */
-    class BitSequenceBuilder375 : public BitSequenceBuilder
-    {
-        public:
-            BitSequenceBuilder375() {};
-            virtual ~BitSequenceBuilder375() {};
-            virtual BitSequence * build(uint * bitseq, size_t len) const;
-            virtual BitSequence * build(const BitString & bs) const;
-    };
+namespace cds_static {
+/** BitSequence builder for BitSequence375
+ *
+ * @author Francisco Claude
+ */
+class BitSequenceBuilder375 : public BitSequenceBuilder {
+   public:
+    BitSequenceBuilder375(){};
+    virtual ~BitSequenceBuilder375(){};
+    virtual BitSequence* build(uint* bitseq, size_t len) const;
+    virtual BitSequence* build(const BitString& bs) const;
 };
+};  // namespace cds_static
 #endif

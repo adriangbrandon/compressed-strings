@@ -22,25 +22,24 @@
 #ifndef BITSEQUENCEBUILDERRG_H
 #define BITSEQUENCEBUILDERRG_H
 
-#include "libcds-utils/libcdsBasics.h"
-#include "libcds-static/bitsequence/BitSequenceRG.h"
 #include "libcds-static/bitsequence/BitSequenceBuilder.h"
+#include "libcds-static/bitsequence/BitSequenceRG.h"
+#include "libcds-utils/libcdsBasics.h"
 
-namespace cds_static
-{
-    /** BitSequence builder for BitSequenceRG
-     *
-     * @author Francisco Claude
-     */
-    class BitSequenceBuilderRG : public BitSequenceBuilder
-    {
-        public:
-            BitSequenceBuilderRG(uint factor);
-            virtual ~BitSequenceBuilderRG() {}
-            virtual BitSequence * build(uint * bitseq, size_t len) const;
-            virtual BitSequence * build(const BitString & bs) const;
-        protected:
-            uint factor;
-    };
+namespace cds_static {
+/** BitSequence builder for BitSequenceRG
+ *
+ * @author Francisco Claude
+ */
+class BitSequenceBuilderRG : public BitSequenceBuilder {
+   public:
+    BitSequenceBuilderRG(uint factor);
+    virtual ~BitSequenceBuilderRG() {}
+    virtual BitSequence* build(uint* bitseq, size_t len) const;
+    virtual BitSequence* build(const BitString& bs) const;
+
+   protected:
+    uint factor;
 };
+};  // namespace cds_static
 #endif

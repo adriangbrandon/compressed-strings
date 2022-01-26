@@ -24,70 +24,72 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 */
 
-	// binary heap with sqrt(u) heaps for least occurring ones
-	// and list of frequencies, each with a list of elems, for the others
-	// which are no more than sqrt(u) overall. this guarantees O(1) 
-	// operation times for the heap, as frequencies change by +-1, and
-	// O(sqrt(u)) integers overhead over the bare arrays of ids (/factor).
+// binary heap with sqrt(u) heaps for least occurring ones
+// and list of frequencies, each with a list of elems, for the others
+// which are no more than sqrt(u) overall. this guarantees O(1)
+// operation times for the heap, as frequencies change by +-1, and
+// O(sqrt(u)) integers overhead over the bare arrays of ids (/factor).
 
 #ifndef HEAPINCLUDED
 #define HEAPINCLUDED
 
 #include <stdlib.h>
+
 #include <cstdint>
-#include "basics.h"
+
 #include "arrayg.h"
+#include "basics.h"
 #include "records.h"
 
 static const int PRNH = 0;
 
-typedef struct 
-  { uint64_t freq;
-    int64_t elems; // a pointer within freq array
-    int64_t larger,smaller; // pointers within ff array
-  } Thfreq;
+typedef struct {
+    uint64_t freq;
+    int64_t elems;            // a pointer within freq array
+    int64_t larger, smaller;  // pointers within ff array
+} Thfreq;
 
-typedef struct 
-  { int64_t id;
-    int64_t prev,next; // actually pointers within freq array
-    uint64_t fnode; // ptr to its freq node (ptr to ff)
-  } Thnode;
+typedef struct {
+    int64_t id;
+    int64_t prev, next;  // actually pointers within freq array
+    uint64_t fnode;      // ptr to its freq node (ptr to ff)
+} Thnode;
 
-typedef struct
-  { Thnode *freq; // space for all frequent nodes is preallocated, sqrt(u)
-    uint64_t freef; // ptr to free list in freq
-    Thfreq *ff; // space for all frequencies of frequent nodes prealloc idem
-    uint64_t freeff; // ptr to free list in ff
-    int64_t smallest,largest; // list of frequent ones (ptrs in ff)
-    Tarray *infreq; // vectors for infrequent ones
+typedef struct {
+    Thnode *freq;    // space for all frequent nodes is preallocated, sqrt(u)
+    uint64_t freef;  // ptr to free list in freq
+    Thfreq *ff;  // space for all frequencies of frequent nodes prealloc idem
+    uint64_t freeff;            // ptr to free list in ff
+    int64_t smallest, largest;  // list of frequent ones (ptrs in ff)
+    Tarray *infreq;             // vectors for infrequent ones
     uint64_t sqrtu;
     uint64_t max;  // max freq heap used
-    Trarray *Rec; // records
-  } Theap;
+    Trarray *Rec;  // records
+} Theap;
 
-class Heap
-{
-public:
-	// creates new empty heap
-	// 0<factor<1: occupancy factor
-	// sqrt(u)*max(minsize,n/factor) integers
-	static Theap createHeap (uint64_t u, Trarray *Rec, float factor, uint64_t minsize);
-	// destroys H
-	static void destroyHeap (Theap *H);
-	// inc freq of pair Rec[id]
-	static void incFreq (Theap *H, int64_t id);
-	// dec freq of pair Rec[id]
-	static void decFreq (Theap *H, int64_t id);
-	// with freq 1
-	static void insertHeap (Theap *H, int64_t id);
+class Heap {
+   public:
+    // creates new empty heap
+    // 0<factor<1: occupancy factor
+    // sqrt(u)*max(minsize,n/factor) integers
+    static Theap createHeap(uint64_t u, Trarray *Rec, float factor,
+                            uint64_t minsize);
+    // destroys H
+    static void destroyHeap(Theap *H);
+    // inc freq of pair Rec[id]
+    static void incFreq(Theap *H, int64_t id);
+    // dec freq of pair Rec[id]
+    static void decFreq(Theap *H, int64_t id);
+    // with freq 1
+    static void insertHeap(Theap *H, int64_t id);
 
-	static int64_t extractMax (Theap *H);
-	// remove elems with freq 1
-	static void purgeHeap (Theap *H); 
-	// repositions pair
-	static void heapRepos (Theap *H, int64_t id);
+    static int64_t extractMax(Theap *H);
+    // remove elems with freq 1
+    static void purgeHeap(Theap *H);
+    // repositions pair
+    static void heapRepos(Theap *H, int64_t id);
 
-	static void move (Tarray A, int64_t i, int64_t j, Trecord *rec);
-	static void prnH (Theap *H);
+    static void move(Tarray A, int64_t i, int64_t j, Trecord *rec);
+    static void prnH(Theap *H);
 };
 #endif
