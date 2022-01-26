@@ -26,9 +26,9 @@ namespace cds_static
 
     wt_node_internal::wt_node_internal(uint * symbols, size_t n, uint l, wt_coder * c, BitSequenceBuilder * bmb) {
         uint * ibitmap = new uint[n/W+1];
-        for(uint i=0;i<n/W+1;i++)
+        for(uint64_t i=0;i<n/W+1;i++)
             ibitmap[i]=0;
-        for(uint i=0;i<n;i++) {
+        for(uint64_t i=0;i<n;i++) {
             if(c->is_set(symbols[i],l))
                 bitset(ibitmap,i);
         }
@@ -40,7 +40,7 @@ namespace cds_static
         uint * right = new uint[count_right+1];
         count_right = count_left = 0;
         bool match_left = true, match_right = true;
-        for(uint i=0;i<n;i++) {
+        for(uint64_t i=0;i<n;i++) {
             if(bitmap->access(i)) {
                 right[count_right++]=symbols[i];
                 if(count_right>1)
@@ -79,9 +79,9 @@ namespace cds_static
 
     wt_node_internal::wt_node_internal(uchar * symbols, size_t n, uint l, wt_coder * c, BitSequenceBuilder * bmb, size_t left, uint *done) {
         uint * ibitmap = new uint[n/W+1];
-        for(size_t i=0;i<n/W+1;i++)
+        for(uint64_t i=0;i<n/W+1;i++)
             ibitmap[i]=0;
-        for(size_t i=0;i<n;i++)
+        for(uint64_t i=0;i<n;i++)
             if(c->is_set((uint)symbols[i + left],l))
                 bitset(ibitmap,i);
         bitmap = bmb->build(ibitmap, n);
@@ -90,10 +90,10 @@ namespace cds_static
         size_t count_right = bitmap->rank1(n-1);
         size_t count_left = n-count_right;
 
-        for (size_t i=0;i<n;i++)
+        for (uint64_t i=0;i<n;i++)
             set_field(done, 1, i+left, 0);
 
-        for (size_t i = 0; i < n; ) {
+        for (uint64_t i = 0; i < n; ) {
             size_t j = i;
             uchar swap = symbols[j+left];
                                  // swapping
