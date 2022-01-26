@@ -21,6 +21,7 @@
 #include "libcds-static/bitsequence/BitSequenceBuilder.h"
 #include "libcds-static/mapper/Mapper.h"
 #include "libcds-static/sequence/SequenceBuilder.h"
+#include "libcds-static/sequence/wt_coder.h"
 #include "libcds-utils/libcdsBasics.h"
 
 #ifndef SEQUENCEBUILDERWAVELETTREE_H

@@ -1,4 +1,3 @@
-
 /*
 
 Repair -- an implementation of Larsson and Moffat's compression and
@@ -28,6 +27,8 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 #ifndef RECORDSINCLUDED
 #define RECORDSINCLUDED
+
+#include <stdlib.h>
 
 #include "basics.h"
 #include "stdio.h"

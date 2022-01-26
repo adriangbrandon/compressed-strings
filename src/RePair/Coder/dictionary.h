@@ -30,6 +30,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #define DICTIONARYINCLUDED
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "basics.h"
 

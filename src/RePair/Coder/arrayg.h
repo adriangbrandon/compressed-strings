@@ -28,6 +28,8 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #ifndef ARRAYINCLUDED
 #define ARRAYINCLUDED
 
+#include <stdlib.h>
+
 #include "basics.h"
 
 typedef struct {

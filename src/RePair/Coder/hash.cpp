@@ -33,8 +33,6 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 #include "hash.h"
 
-#include <stdlib.h>
-
 int HashRP::searchHash(Thash H, Tpair p) {
     relong u = ((relong)p.left) << (8 * sizeof(int)) | (relong)p.right;
     int k = ((PRIME * u) >> (8 * sizeof(int))) & H.maxpos;
