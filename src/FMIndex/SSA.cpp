@@ -163,7 +163,9 @@ bool SSA::build_index() {
         delete bwt;
         bwt = NULL;
     }
+    cerr << "Calling build_bwt" << endl;
     build_bwt();
+    cerr << "Finished build_bwt" << endl;
     if (free_text) {
         delete[] _seq;
         _seq = NULL;
@@ -199,7 +201,9 @@ void SSA::build_bwt() {
     assert(_sbb != NULL);
     if (_bwt != NULL) delete[] _bwt;
     _bwt = new uint[n + 2];
+    cerr << "Calling build_sa" << endl;
     build_sa();
+    cerr << "Finished build_sa" << endl;
     for (uint64_t i = 0; i < n + 1; i++) {
         if (_sa[i] == 0)
             _bwt[i] = 0;
@@ -259,7 +263,7 @@ uint64_t SSA::locate_id(uchar *pattern, uint_fast32_t m) {
 }
 
 uint SSA::locateP(uchar *pattern, uint m, size_t *left, size_t *right,
-                  size_t elements) {
+                  size_t /* elements */) {
     ulong i = m - 1;
     uint c = pattern[i];
     uint sp = occ[c];

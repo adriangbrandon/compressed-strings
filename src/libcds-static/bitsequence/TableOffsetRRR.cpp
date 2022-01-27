@@ -94,7 +94,7 @@ uint table_offset::size() {
 
 // OLD implementation, replace
 
-void genera(ushort* bch, uint u, ushort* F, uint lF) {
+void genera(ushort* bch, uint u, ushort* F, uint /* lF */) {
     __indAcumulado = 0;
     __indiceFunc = 0;
     F[0] = 0;

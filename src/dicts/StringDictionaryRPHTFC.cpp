@@ -460,7 +460,8 @@ IteratorDictID *StringDictionaryRPHTFC::locatePrefix(uchar *str, uint strLen) {
     return itResult;
 }
 
-IteratorDictID *StringDictionaryRPHTFC::locateSubstr(uchar *str, uint strLen) {
+IteratorDictID *StringDictionaryRPHTFC::locateSubstr(uchar * /* str */,
+                                                     uint /* strLen */) {
     cerr << "This dictionary does not provide substring location" << endl;
     return NULL;
 }
@@ -491,7 +492,7 @@ IteratorDictString *StringDictionaryRPHTFC::extractPrefix(uchar *str,
 }
 
 IteratorDictString *StringDictionaryRPHTFC::extractSubstr(
-    uchar *str, uint_fast32_t strLen) {
+    uchar * /* str */, uint_fast32_t /* strLen */) {
     cerr << "This dictionary does not provide substring extraction" << endl;
     return 0;
 }
@@ -746,8 +747,8 @@ uint StringDictionaryRPHTFC::searchPrefix(ChunkScan *c, uint scanneable,
 }
 
 uint_fast32_t StringDictionaryRPHTFC::searchDistinctPrefix(
-    ChunkScan *c, uint_fast32_t scanneable, uchar *str, uint_fast32_t strLen,
-    uint_fast32_t *offset) {
+    ChunkScan *c, uint_fast32_t scanneable, uchar * /* str */,
+    uint_fast32_t strLen, uint_fast32_t *offset) {
     uint_fast32_t id = 1;
 
     for (id = 1; id < scanneable; id++)

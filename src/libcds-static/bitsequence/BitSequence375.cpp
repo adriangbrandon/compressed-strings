@@ -138,12 +138,12 @@ size_t BitSequence375::getSize() const {
            (sizeof(uchar) * bSize) + (sizeof(BitSequence));
 }
 
-size_t BitSequence375::selectPrev1(const size_t start) const {
+size_t BitSequence375::selectPrev1(const size_t /* start */) const {
     cout << "Not implemented SELECTPREV1" << endl;
     return 0;
 }
 
-size_t BitSequence375::selectNext1(const size_t k1) const {
+size_t BitSequence375::selectNext1(const size_t /* k1 */) const {
     cout << "Not implemented SELECTNEXT1" << endl;
     return 0;
 }

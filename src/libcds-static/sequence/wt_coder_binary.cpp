@@ -23,7 +23,7 @@
 
 namespace cds_static {
 
-wt_coder_binary::wt_coder_binary(const Array &a, Mapper *am) {
+wt_coder_binary::wt_coder_binary(const Array &a, Mapper * /* am */) {
     // am->use();
     uint maxv = 0;
     for (size_t i = 0; i < a.getLength(); i++) maxv = max(maxv, a[i]);
@@ -52,7 +52,7 @@ bool wt_coder_binary::is_set(uint symbol, uint l) const {
     return false;
 }
 
-bool wt_coder_binary::done(uint symbol, uint l) const {
+bool wt_coder_binary::done(uint /* symbol */, uint l) const {
     if (l == h) return true;
     return false;
 }

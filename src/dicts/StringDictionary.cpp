@@ -29,7 +29,7 @@
 
 using namespace std;
 
-unique_ptr<StringDictionary> StringDictionary::load(ifstream& fp, uint opt) {
+unique_ptr<StringDictionary> StringDictionary::load(ifstream& fp, uint /* opt */) {
     size_t r = loadValue<uint32_t>(fp);
     fp.seekg(0, fp.beg);
 

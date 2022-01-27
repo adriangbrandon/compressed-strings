@@ -207,7 +207,7 @@ int build_index(uchar *text, ulong length, char *build_options, void **index) {
     return 0;
 }
 
-int save_index(void *index, char *filename) {
+int save_index(void * /* index */, char * /* filename */) {
     /*si lo puedo grabar*/
     return 99;
 }

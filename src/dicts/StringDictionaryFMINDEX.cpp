@@ -46,6 +46,7 @@ StringDictionaryFMINDEX::StringDictionaryFMINDEX(IteratorDictString *it,
     this->maxlength = 0;
     this->BWTsampling = BWTsampling;
 
+    cerr << "Begin FMINDEX build" << endl;
     uint64_t len = it->size();
     uchar *text = new uchar[len + 2];
     uint *bitmap = 0;
@@ -64,6 +65,7 @@ StringDictionaryFMINDEX::StringDictionaryFMINDEX(IteratorDictString *it,
     processed++;           // We suppose that \1 is not part of the text
     text[len + 1] = '\0';  // end of the text
 
+    cerr << "Adding separators" << endl;
     while (it->hasNext()) {
         strCurrent = it->next(&lenCurrent);
         if (lenCurrent >= maxlength) maxlength = lenCurrent + 1;
@@ -91,11 +93,13 @@ StringDictionaryFMINDEX::StringDictionaryFMINDEX(IteratorDictString *it,
     this->separators = NULL;
 
     if (BWTsampling > 0) {
+        cerr << "Building BitSequenceRRR" << endl;
         separators = new BitSequenceRRR(bitmap, len);
         delete[] bitmap;
     } else
         separators = NULL;
 
+    cerr << "Call build_ssa" << endl;
     build_ssa((uchar *)text, len, sparse_bitsequence, bparam);
 
     delete[] text;
@@ -259,19 +263,24 @@ void StringDictionaryFMINDEX::build_ssa(uchar *text, uint64_t len,
         sbb = new BitSequenceBuilderRRR(bparam);
     else
         sbb = new BitSequenceBuilderRG(bparam);
+    cerr << "Setting bitsequence builder" << endl;
     fm_index->set_static_bitsequence_builder(sbb);
 
+    cerr << "Building SequenceBuilderWaveletTree" << endl;
     SequenceBuilder *ssb = new SequenceBuilderWaveletTree(sbb, am, wc);
     fm_index->set_static_sequence_builder(ssb);
+    cerr << "Calling build_index" << endl;
     fm_index->build_index();
 
     if (BWTsampling > 0) {
-        uint samples = (len + 1) / BWTsampling + 1;
+        cerr << "Saving BWT samples" << endl;
+        uint64_t samples = (len + 1) / BWTsampling + 1;
 
-        for (uint i = 0; i < samples; i++)
+        for (uint64_t i = 0; i < samples; i++)
             fm_index->suff_sample[i] =
                 separators->rank1(fm_index->suff_sample[i]);
     }
+    cerr << "Finish build_ssa" << endl;
 }
 
 StringDictionaryFMINDEX::~StringDictionaryFMINDEX() {

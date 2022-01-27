@@ -119,7 +119,7 @@ StringDictionaryPFC::StringDictionaryPFC(IteratorDictString *it,
     blStrings = make_shared<LogSequence>(&xblStrings, bits(bytesStrings));
 }
 
-uint64_t StringDictionaryPFC::locate(uchar *str, uint_fast32_t strLen) {
+uint64_t StringDictionaryPFC::locate(uchar *str, uint_fast32_t /* strLen */) {
     uint id = NORESULT;
 
     // Locating the candidate bucket for the string
@@ -276,7 +276,8 @@ IteratorDictID *StringDictionaryPFC::locatePrefix(uchar *str, uint strLen) {
     }
 }
 
-IteratorDictID *StringDictionaryPFC::locateSubstr(uchar *str, uint strLen) {
+IteratorDictID *StringDictionaryPFC::locateSubstr(uchar * /* str */,
+                                                  uint /* strLen */) {
     cerr << "This dictionary does not provide substring location" << endl;
     return NULL;
 }
@@ -308,8 +309,8 @@ IteratorDictString *StringDictionaryPFC::extractPrefix(uchar *str,
         return NULL;
 }
 
-IteratorDictString *StringDictionaryPFC::extractSubstr(uchar *str,
-                                                       uint_fast32_t strLen) {
+IteratorDictString *StringDictionaryPFC::extractSubstr(
+    uchar * /* str */, uint_fast32_t /* strLen */) {
     cerr << "This dictionary does not provide substring extraction" << endl;
     return 0;
 }
@@ -508,7 +509,7 @@ uint StringDictionaryPFC::searchPrefix(uchar **ptr, uint scanneable,
 
 uint StringDictionaryPFC::searchDistinctPrefix(uchar *ptr, uint scanneable,
                                                uchar *decoded, uint *decLen,
-                                               uchar *str, uint strLen) {
+                                               uchar * /* str */, uint strLen) {
     uint id = 1;
     uint_fast32_t lenPrefix;
 

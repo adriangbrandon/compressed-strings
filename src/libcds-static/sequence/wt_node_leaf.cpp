@@ -32,7 +32,8 @@ wt_node_leaf::wt_node_leaf() {}
 
 wt_node_leaf::~wt_node_leaf() {}
 
-size_t wt_node_leaf::rank(uint symbol, size_t pos, uint l, wt_coder *c) const {
+size_t wt_node_leaf::rank(uint symbol, size_t pos, uint /* l */,
+                          wt_coder * /* c */) const {
     if (symbol != this->symbol) {
         return 0;
     }
@@ -40,14 +41,14 @@ size_t wt_node_leaf::rank(uint symbol, size_t pos, uint l, wt_coder *c) const {
     return pos;
 }
 
-size_t wt_node_leaf::select(uint symbol, size_t pos, uint l,
-                            wt_coder *c) const {
+size_t wt_node_leaf::select(uint symbol, size_t pos, uint /* l */,
+                            wt_coder * /* c */) const {
     if (symbol != this->symbol) return (size_t)-1;
     if (pos == 0 || pos > count) return (size_t)-1;
     return pos;
 }
 
-uint wt_node_leaf::access(size_t pos) const { return symbol; }
+uint wt_node_leaf::access(size_t /* pos */) const { return symbol; }
 
 uint wt_node_leaf::access(size_t pos, size_t &rank) const {
     rank = pos + 1;
