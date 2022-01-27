@@ -54,7 +54,5 @@ class IteratorDictID {
 #include "IteratorDictIDContiguous.h"
 #include "IteratorDictIDDuplicates.h"
 #include "IteratorDictIDNoContiguous.h"
-#include "IteratorDictIDXBW.h"
-#include "IteratorDictIDXBWDuplicates.h"
 
 #endif
