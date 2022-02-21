@@ -31,10 +31,9 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include <stdio.h>
 #include <stdlib.h>
 
-Theap Heap::createHeap(uint64_t u, Trarray *Rec, float factor,
-                       uint64_t minsize) {
+Theap Heap::createHeap(int64_t u, Trarray *Rec, float factor, int64_t minsize) {
     Theap H;
-    uint64_t i;
+    int64_t i;
     H.sqrtu = 2;
     while (H.sqrtu * H.sqrtu < u) H.sqrtu++;
     H.infreq = (Tarray *)malloc(H.sqrtu * sizeof(Tarray));
@@ -55,7 +54,7 @@ Theap Heap::createHeap(uint64_t u, Trarray *Rec, float factor,
 }
 
 void Heap::destroyHeap(Theap *H) {
-    uint64_t i;
+    int64_t i;
     //    Thfreq *l,*n;
     for (i = 1; i < H->sqrtu; i++) ArrayG::destroyArray(&H->infreq[i]);
     free(H->infreq);
@@ -206,7 +205,7 @@ void Heap::incFreq(Theap *H, int64_t id) {
 
 void Heap::decFreq(Theap *H, int64_t id) {
     Trecord *rec = H->Rec->records;
-    int freq = rec[id].freq--;
+    int64_t freq = rec[id].freq--;
     int hpos = rec[id].hpos;
     Thnode *p;
     Thfreq *f, *sf;

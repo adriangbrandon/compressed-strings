@@ -114,7 +114,7 @@ THuffx createHuff(uint64_t *freq, uint lim) {
     // now assign depths recursively
     setdepths(tree, 2 * lim, 0);
     H.spos = new uint[H.max + 1];
-    for (i = 0; i <= (int)H.max; i++) H.spos[i] = ~0;
+    for (i = 0; i <= (int)H.max; i++) H.spos[i] = ~static_cast<uint>(0);
     H.num_enc = new uint[lim + 1];  // max possible depth
     d = 0;
     for (i = lim; i >= 0; i--) {
@@ -259,7 +259,7 @@ THuffx loadHuff(ifstream &f) {
     H.num_dec = new uint[H.depth + 1];
     H.fst[H.depth] = 0;
     dold = 0;
-    for (d = H.depth - 1; d >= 0; d--) {
+    for (d = H.depth - 1;; d--) {
         dact = H.num_enc[d + 1];
         H.fst[d] = (H.fst[d + 1] + dact) >> 1;
         H.num_dec[d + 1] = dold;

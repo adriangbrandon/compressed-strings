@@ -30,6 +30,8 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 #include <stdlib.h>
 
+#include <cstdint>
+
 #include "basics.h"
 #include "stdio.h"
 
@@ -38,11 +40,11 @@ typedef struct {
 } Tlist;  // list of prev next equal char
 
 typedef struct {
-    Tpair pair;  // pair content
-    int freq;    // frequency
-    int cpos;    // 1st position in C
-    int hpos;    // position in heap
-    int kpos;    // position in hash
+    Tpair pair;    // pair content
+    int64_t freq;  // frequency
+    int64_t cpos;  // 1st position in C
+    int64_t hpos;  // position in heap
+    int64_t kpos;  // position in hash
 } Trecord;
 
 typedef struct {

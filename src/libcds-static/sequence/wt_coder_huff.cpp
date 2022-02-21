@@ -53,14 +53,17 @@ wt_coder_huff::~wt_coder_huff() { delete hc; }
 
 // TODO: it could be implemented in a more efficient (low level) way
 bool wt_coder_huff::is_set(uint symbol, uint l) const {
-    uint buffer[maxBuffer];
+    auto buffer = new uint[maxBuffer];
     hc->encode(symbol, buffer, (size_t)0);
-    return bitget(buffer, l);
+    auto ans = bitget(buffer, l);
+    delete[] buffer;
+    return ans;
 }
 
 bool wt_coder_huff::done(uint symbol, uint l) const {
-    uint buffer[maxBuffer];
+    auto buffer = new uint[maxBuffer];
     uint s_len = (uint)hc->encode(symbol, buffer, (size_t)0);
+    delete[] buffer;
     return l == s_len;
 }
 

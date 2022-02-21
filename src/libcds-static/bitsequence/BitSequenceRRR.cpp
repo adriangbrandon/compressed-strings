@@ -389,7 +389,7 @@ BitSequenceRRR *BitSequenceRRR::load(ifstream &f) {
         ret->O = loadValue<uint>(f, ret->O_len);
         ret->create_sampling(ret->sample_rate);
         return ret;
-    } catch (exception e) {
+    } catch (const exception &e) {
         delete ret;
     }
     return NULL;

@@ -85,24 +85,24 @@ int IRePair::repair() {
             prnSym(orec->pair.left);
             printf(",");
             prnSym(orec->pair.right);
-            printf(") (%i occs)\n", orec->freq);
+            printf(") (%lu occs)\n", orec->freq);
         }
         while (cpos != -1) {
-            int ant, sgte, ssgte;
+            int64_t ant, sgte, ssgte;
             // replacing bc->e in abcd, b = cpos, c = sgte, d = ssgte
             if (C[cpos + 1] < 0)
                 sgte = -C[cpos + 1] - 1;
             else
                 sgte = cpos + 1;
-            if ((sgte + 1 < u) && (C[sgte + 1] < 0))
+            if ((sgte + 1 < static_cast<int64_t>(u)) && (C[sgte + 1] < 0))
                 ssgte = -C[sgte + 1] - 1;
             else
                 ssgte = sgte + 1;
             // remove bc from L
             if (L[cpos].next != -1) L[L[cpos].next].prev = -oid - 1;
             orec->cpos = L[cpos].next;
-            if (ssgte != u)  // there is ssgte
-            {                // remove occ of cd
+            if (ssgte != static_cast<int64_t>(u))  // there is ssgte
+            {                                      // remove occ of cd
                 pair.left = C[sgte];
                 pair.right = C[ssgte];
                 id = HashRP::searchHash(Hash, pair);
@@ -180,7 +180,7 @@ int IRePair::repair() {
                 rec->cpos = ant;
             }
             C[cpos] = n;
-            if (ssgte != u) C[ssgte - 1] = -cpos - 1;
+            if (ssgte != static_cast<int64_t>(u)) C[ssgte - 1] = -cpos - 1;
             C[cpos + 1] = -ssgte - 1;
             c--;
             orec = &Rec.records[oid];  // just in case of Rec.records realloc'd
@@ -256,7 +256,7 @@ void IRePair::prepare(uint64_t len) {
 void IRePair::prnSym(int c) { printf("%i", c); }
 
 void IRePair::prnC(void) {
-    int i = 0;
+    uint64_t i = 0;
     printf("C[1..%lu] = ", c);
     while (i < u) {
         prnSym(C[i]);
@@ -281,7 +281,7 @@ void IRePair::prnRec(void) {
         prnSym(Rec.records[i].pair.left);
         printf(",");
         prnSym(Rec.records[i].pair.right);
-        printf("), %i occs\n", Rec.records[i].freq);
+        printf("), %lu occs\n", Rec.records[i].freq);
     }
     printf("\n");
 }

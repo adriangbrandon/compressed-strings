@@ -30,8 +30,8 @@ int compare(const void *p1, const void *p2) {
 
 perm createPerm(uint *elems, uint nelems, uint t, BitSequenceBuilder *bmb) {
     perm P;
-    uint *b, *baux, nextelem, i, j, bptr, aux, antbptr, nbwdptrs, elem, nbits,
-        firstelem, cyclesize;
+    uint *b, *baux, nextelem, i, j, bptr, aux, antbptr, nbwdptrs, elem,
+        nbits /* , firstelem */, cyclesize;
     auxbwd *auxbwdptr;
     P = new struct sperm;
     P->elems = elems;
@@ -65,7 +65,7 @@ perm createPerm(uint *elems, uint nelems, uint t, BitSequenceBuilder *bmb) {
                 aux = 0;
                 bitset(baux, j);
                 cyclesize = 0;
-                firstelem = j;
+                // firstelem = j;
                 while ((elem = get_field(elems, nbits, j)) != nextelem) {
                     j = elem;
                     bitset(baux, j);

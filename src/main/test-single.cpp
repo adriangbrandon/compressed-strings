@@ -127,6 +127,7 @@ int main(int argc, char *argv[]) {
             exit(1);
         }
 
+        delete[] extractedPtr;
         readStrings++;
         readBytes += cur.size() + 1;
         if (int(100 * readBytes / totalBytes) > progress) {

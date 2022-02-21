@@ -102,5 +102,5 @@ int mymunmap(MMAP *m) {
     close(m->fd);
     return 0;
 }
-};
+}
 #endif

@@ -171,7 +171,7 @@ int build_index(uchar *text, ulong length, char *build_options, void **index) {
     }
 
     int n = length;
-    char fname1[128] = "", fname2[128] = "";
+    char fname1[512] = "", fname2[512] = "";
 
     /* make the SA */
     int i, *x, *p;
@@ -264,9 +264,9 @@ int index_size_locate(void *index, ulong *size) {
 //Querying the Index//
 ////////////////////*/
 int count(void *index, uchar *pattern, ulong length, ulong *numocc) {
-    int l, r, len;
+    int l, r /* , len */;
     CSA *SA = (CSA *)index;
-    len = csa_bsearch(pattern, length, SA, &l, &r);
+    /* len =  */ csa_bsearch(pattern, length, SA, &l, &r);
     *numocc = r - l + 1;
     return 0;
 }
@@ -274,7 +274,7 @@ int count(void *index, uchar *pattern, ulong length, ulong *numocc) {
 ulong locate_extract(void *index) {
     CSA *SA = (CSA *)index;
     ulong largo, *occ, lar, n = SA->n, l, r, lll = 0;
-    ulong matches, locate;
+    ulong matches /* , locate */;
     ulong random, hh;
     for (hh = 1; hh <= 1000000; hh *= 10) {
         for (lar = 1; lar <= 9; lar++) {
@@ -282,7 +282,7 @@ ulong locate_extract(void *index) {
             occ = NULL;
             random = (ulong)(((float)rand() / (float)RAND_MAX) * (n - 1));
             matches = largo + 1;
-            locate = 0;
+            /* locate = 0; */
             occ = (ulong *)malloc(matches * sizeof(ulong));
             l = random;
             r = min(random + largo, n - 3);
@@ -297,9 +297,9 @@ int locate(void *index, uchar *pattern, ulong length, ulong **occ,
            ulong *numocc) {
     //*numocc=locate_extract(index);
     // exit(0);
-    int l, r, len;
+    int l, r /* , len */;
     CSA *SA = (CSA *)index;
-    len = csa_bsearch(pattern, length, SA, &l, &r);
+    /* len =  */ csa_bsearch(pattern, length, SA, &l, &r);
     *numocc = r - l + 1;
     (*occ) = csa_batchlookup2(SA, l, r);
     return 0;
@@ -404,9 +404,11 @@ char *error_index(int e) {
             printf(error, "Error writing the index");
             break;
         case 23:
-            printf(error, "Cannot open index; break");
+            printf(error, "Cannot open index");
+            break;
         case 24:
-            printf(error, "Cannot open text; break");
+            printf(error, "Cannot open text");
+            break;
         case 25:
             printf(error, "Error reading the index");
             break;

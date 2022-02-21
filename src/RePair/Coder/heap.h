@@ -44,7 +44,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 static const int PRNH = 0;
 
 typedef struct {
-    uint64_t freq;
+    int64_t freq;
     int64_t elems;            // a pointer within freq array
     int64_t larger, smaller;  // pointers within ff array
 } Thfreq;
@@ -52,18 +52,18 @@ typedef struct {
 typedef struct {
     int64_t id;
     int64_t prev, next;  // actually pointers within freq array
-    uint64_t fnode;      // ptr to its freq node (ptr to ff)
+    int64_t fnode;       // ptr to its freq node (ptr to ff)
 } Thnode;
 
 typedef struct {
-    Thnode *freq;    // space for all frequent nodes is preallocated, sqrt(u)
-    uint64_t freef;  // ptr to free list in freq
-    Thfreq *ff;  // space for all frequencies of frequent nodes prealloc idem
-    uint64_t freeff;            // ptr to free list in ff
+    Thnode *freq;   // space for all frequent nodes is preallocated, sqrt(u)
+    int64_t freef;  // ptr to free list in freq
+    Thfreq *ff;     // space for all frequencies of frequent nodes prealloc idem
+    int64_t freeff;             // ptr to free list in ff
     int64_t smallest, largest;  // list of frequent ones (ptrs in ff)
     Tarray *infreq;             // vectors for infrequent ones
-    uint64_t sqrtu;
-    uint64_t max;  // max freq heap used
+    int64_t sqrtu;
+    int64_t max;   // max freq heap used
     Trarray *Rec;  // records
 } Theap;
 
@@ -72,8 +72,8 @@ class Heap {
     // creates new empty heap
     // 0<factor<1: occupancy factor
     // sqrt(u)*max(minsize,n/factor) integers
-    static Theap createHeap(uint64_t u, Trarray *Rec, float factor,
-                            uint64_t minsize);
+    static Theap createHeap(int64_t u, Trarray *Rec, float factor,
+                            int64_t minsize);
     // destroys H
     static void destroyHeap(Theap *H);
     // inc freq of pair Rec[id]

@@ -440,7 +440,7 @@ int readint(FILE *f) {
 int csa_read(CSA *SA, char *fname1, char *fname2) {
     int i, n, m;
     FILE *f;
-    int psize, isize;
+    int isize;
     unsigned char *ptr;
 
 #ifndef USE_MMAP
@@ -450,7 +450,7 @@ int csa_read(CSA *SA, char *fname1, char *fname2) {
         exit(1);
     }
     fseek(f, 0, SEEK_END);
-    psize = ftell(f);
+    int psize = ftell(f);
     fseek(f, 0, 0);
     SA->B = malloc(psize + 1);
     if (SA->B == NULL) {
@@ -467,7 +467,7 @@ int csa_read(CSA *SA, char *fname1, char *fname2) {
     }
     SA->B = (unsigned short *)SA->mapp->addr;
     SA->p_size = SA->mapp->len;
-    psize = SA->mapp->len;
+    // psize = SA->mapp->len;
 #endif
 
     f = fopen(fname2, "rb");
