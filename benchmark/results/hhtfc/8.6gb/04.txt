@@ -1,0 +1,7 @@
+Test successful:
+	Tested strings: 348011413
+	Total test time: 1873 [seconds]
+	Total locate time: 7.41815e+08 [microsec]
+	Mean locate time: 2.13158 [microsec]
+	Total extract time: 5.53626e+08 [microsec]
+	Mean extract time: 1.59083 [microsec]

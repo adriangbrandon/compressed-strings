@@ -19,3 +19,5 @@ There are tests in the `benchmark` folder. For those, the following were used:
 * Dictionary source: Random strings from wikidata
 
 It was not possible to run tests with big dictionaries using FMINDEX and RPHTFC, because those don't support 64 bit dictionaries yet.
+
+You can find some useful scripts used for running the benchmarks in `benchmark/scripts`
