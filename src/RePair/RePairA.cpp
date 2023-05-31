@@ -42,13 +42,13 @@ RePairA::RePairA(int *sequence, uint64_t length, uchar maxchar) {
     this->Cdac = NULL;
     this->maxchar = maxchar;
 
-    //std::string repair_file = "repair_" + std::to_string(getpid());
+    std::string repair_file = "repair_" + std::to_string(getpid());
 
-    std::string repair_file = "repair_33784";
+    //std::string repair_file = "repair_33784";
     std::string fileR = repair_file + ".R";
     std::string fileC = repair_file + ".C";
 
-   // repair_gn::build_grammar_irepair(sequence, length, 250*1024, repair_file.c_str());
+   repair_gn::build_grammar_irepair(sequence, length, 250*1024, repair_file.c_str());
 
     FILE *Tf;
     struct stat s;
@@ -88,7 +88,7 @@ RePairA::RePairA(int *sequence, uint64_t length, uchar maxchar) {
         fprintf(stderr, "Error: cannot open file %s for reading\n", fileC.c_str());
         exit(1);
     }
-    sequence = (int *) malloc(lenC * sizeof(int));
+    sequence = new int[lenC];
     if (fread(sequence, sizeof(int), lenC, Cf) != lenC) {
         fprintf(stderr, "Error: cannot read file %s\n", fileC.c_str());
         exit(1);
