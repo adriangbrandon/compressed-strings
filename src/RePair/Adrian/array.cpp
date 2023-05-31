@@ -39,7 +39,7 @@ namespace repair_gn {
         if (A->size == A->maxsize)
         { if (A->maxsize == 0)
             { A->maxsize = A->minsize;
-                A->pairs =(relong*) malloc (A->maxsize * sizeof(relong));
+                A->pairs =(int64_t*) malloc (A->maxsize * sizeof(int64_t));
                 A->fst = 0;
             }
             else
