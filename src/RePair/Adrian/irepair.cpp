@@ -9,9 +9,9 @@ int PRNP = 0;  // print forming pairs
 int PRNL = 0;  // print progress on text scan
 
 
-#include <irepair.h>
-#include <basics.h>
-#include <records.h>
+#include "irepair.h"
+#include "basics.h"
+#include "records.h"
 #include <stdio.h>
 #include <string.h>
 

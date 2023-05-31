@@ -27,7 +27,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 	// extendible array for pairs
 
 #include <stdlib.h>
-#include <records.h>
+#include "records.h"
 
 namespace repair_gn {
     int insertRecord (Trarray *Rec, Tpair pair)

@@ -28,7 +28,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <heap.h>
+#include "heap.h"
 
 static int PRNH = 0;
 

@@ -32,7 +32,7 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 	// value -1 denotes empty cells, -2 is a deletion mark
 
 #include <stdlib.h>
-#include <hash.h>
+#include "hash.h"
 
 namespace repair_gn {
 
