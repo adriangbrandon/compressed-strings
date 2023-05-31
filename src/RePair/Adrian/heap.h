@@ -64,24 +64,24 @@ namespace repair_gn {
         Trarray *Rec; // records
     } Theap;
 
-    Theap createHeap (relong u, Trarray *Rec, float factor, int minsize);
+    Theap createHeap (relong u, Trarray *Rec, float factor, int64_t minsize);
     // creates new empty heap
     // 0<factor<1: occupancy factor
     // sqrt(u)*max(minsize,n/factor) integers
 
     void destroyHeap (Theap *H); // destroys H
 
-    void incFreq (Theap *H, int id); // inc freq of pair Rec[id]
+    void incFreq (Theap *H, int64_t id); // inc freq of pair Rec[id]
 
-    void decFreq (Theap *H, int id); // dec freq of pair Rec[id]
+    void decFreq (Theap *H, int64_t id); // dec freq of pair Rec[id]
 
-    void insertHeap (Theap *H, int id);  // with freq 1
+    void insertHeap (Theap *H, int64_t id);  // with freq 1
 
-    int extractMax (Theap *H);
+    int64_t extractMax (Theap *H);
 
     void purgeHeap (Theap *H); // remove elems with freq 1
 
-    void heapRepos (Theap *H, int id); // repositions pair
+    void heapRepos (Theap *H, int64_t id); // repositions pair
 
 }
 

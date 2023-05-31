@@ -34,12 +34,12 @@ static int PRNH = 0;
 
 namespace repair_gn {
 
-	Theap createHeap (relong u, Trarray *Rec, float factor, int minsize)
+	Theap createHeap (relong u, Trarray *Rec, float factor, int64_t minsize)
 	// creates new empty heap
 	// minsize, factor: space/time tradeoffs
 
 	{ Theap H;
-		int i;
+        int64_t i;
 		H.sqrtu = 2;
 		while ((relong)H.sqrtu * (relong)H.sqrtu < u) H.sqrtu++;
 		H.infreq = (Tarray*)malloc(H.sqrtu * sizeof(Tarray));
@@ -60,7 +60,7 @@ namespace repair_gn {
 
 	void destroyHeap (Theap *H) // destroys H
 
-	{ int i;
+	{ int64_t i;
 		Thfreq *l,*n;
 		for (i=1;i<H->sqrtu;i++) destroyArray(&H->infreq[i]);
 		free (H->infreq); H->infreq = NULL;
@@ -70,9 +70,9 @@ namespace repair_gn {
 		H->sqrtu = 0;
 	}
 
-	static void move (Tarray A, int i, int j, Trecord *rec)
+	static void move (Tarray A, int64_t i, int64_t j, Trecord *rec)
 
-	{ int id = A.pairs[j];
+	{ int64_t id = A.pairs[j];
 		A.pairs[i] = id;
 		rec[id].hpos = i;
 	}
@@ -82,7 +82,7 @@ namespace repair_gn {
 	{ Thfreq *f;
 		static int X = 0;
 		relong prevf = (((relong)1)<<(8*sizeof(relong)-2))-1;
-		int fp = H->largest;
+        int64_t fp = H->largest;
 		if (fp == -1) return;
 		X++;
 		printf ("Heap %i = \n",X);
@@ -96,14 +96,14 @@ namespace repair_gn {
 		}
 	}
 
-	void incFreq (Theap *H, int id) // inc freq of pair Rec[id]
+	void incFreq (Theap *H, int64_t id) // inc freq of pair Rec[id]
 
 	{ Trecord *rec = H->Rec->records;
 		relong freq = rec[id].freq++;
-		int hpos = rec[id].hpos;
+        int64_t hpos = rec[id].hpos;
 		Thnode *p;
 		Thfreq *f,*lf;
-		int fp,lfp;
+        int64_t fp,lfp;
 		if (PRNH) prnH(H);
 		if (freq >= H->sqrtu) // high freq part, hpos is a ptr within freq
 		{ p = &H->freq[hpos];
@@ -192,14 +192,14 @@ namespace repair_gn {
 		}
 	}
 
-	void decFreq (Theap *H, int id) // dec freq of pair Rec[id]
+	void decFreq (Theap *H, int64_t id) // dec freq of pair Rec[id]
 
 	{ Trecord *rec = H->Rec->records;
 		relong freq = rec[id].freq--;
-		int hpos = rec[id].hpos;
+        int64_t hpos = rec[id].hpos;
 		Thnode *p;
 		Thfreq *f,*sf;
-		int fp,sfp;
+        int64_t fp,sfp;
 		if (PRNH) prnH(H);
 		if (freq > H->sqrtu) // high freq part
 		{ p = &H->freq[hpos];
@@ -279,20 +279,20 @@ namespace repair_gn {
 		}
 	}
 
-	void insertHeap (Theap *H, int id)  // with freq 1
+	void insertHeap (Theap *H, int64_t id)  // with freq 1
 
 	{ Trecord *rec = H->Rec->records;
 		rec[id].hpos = insertArray (&H->infreq[1],id);
 		rec[id].freq = 1;
 	}
 
-	int extractMax (Theap *H)
+    int64_t extractMax (Theap *H)
 
 	{ Trecord *rec = H->Rec->records;
-		int ret;
+        int64_t ret;
 		Thnode *p;
 		Thfreq *f;
-		int fp;
+        int64_t fp;
 		if (PRNH) prnH(H);
 		if ((H->max == H->sqrtu) && (H->largest == -1)) H->max--;
 		if (H->max < H->sqrtu)
@@ -328,7 +328,7 @@ namespace repair_gn {
 	// their freq cannot grow after a repair turn
 
 	{ Trecord *rec = H->Rec->records;
-		int i,id,fst,size,max;
+        int64_t i,id,fst,size,max;
 		size = H->infreq[1].size;
 		fst = H->infreq[1].fst;
 		max = H->infreq[1].maxsize;
@@ -340,7 +340,7 @@ namespace repair_gn {
 		destroyArray(&H->infreq[1]);
 	}
 
-	void heapRepos (Theap *H, int id) // repositions pair
+	void heapRepos (Theap *H, int64_t id) // repositions pair
 
 	{ Trecord *rec = H->Rec->records;
 		if (rec[id].freq < H->sqrtu)

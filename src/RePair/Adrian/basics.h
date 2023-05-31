@@ -27,6 +27,8 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #ifndef BASICSINCLUDED
 #define BASICSINCLUDED
 
+#include <cinttypes>
+
 namespace repair_gn {
 
     typedef long long relong;

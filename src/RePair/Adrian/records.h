@@ -40,8 +40,8 @@ namespace repair_gn {
     { Tpair pair; // pair content
         relong freq; // frequency
         relong cpos; // 1st position in C
-        int hpos; // position in heap
-        int kpos; // position in hash
+        int64_t hpos; // position in heap
+        int64_t kpos; // position in hash
     } Trecord;
 
     typedef struct

@@ -31,21 +31,21 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 namespace repair_gn {
 
-    int insertArray (Tarray *A, int pair)
+    int64_t insertArray (Tarray *A, int64_t pair)
 
-    { int *npairs;
-        int max,size,i,pos,id,fst;
+    { int64_t *npairs;
+        int64_t max,size,i,pos,id,fst;
         Trecord *rec = ((Trarray*)A->Rec)->records;
         if (A->size == A->maxsize)
         { if (A->maxsize == 0)
             { A->maxsize = A->minsize;
-                A->pairs =(int*) malloc (A->maxsize * sizeof(int));
+                A->pairs =(relong*) malloc (A->maxsize * sizeof(relong));
                 A->fst = 0;
             }
             else
             { max = A->maxsize;
                 A->maxsize /= A->factor;
-                npairs =(int*) malloc (A->maxsize * sizeof(int));
+                npairs =(int64_t*) malloc (A->maxsize * sizeof(int64_t));
                 size = A->size;
                 fst = A->fst;
                 for (i=0;i<size;i++)
@@ -67,8 +67,8 @@ namespace repair_gn {
 
     void deleteArray (Tarray *A)
 
-    { int *npairs;
-        int size,i,id,max,fst;
+    { int64_t *npairs;
+        int64_t size,i,id,max,fst;
         Trecord *rec = ((Trarray*)A->Rec)->records;
         A->fst = (A->fst+1) % A->maxsize;
         A->size--;
@@ -82,7 +82,7 @@ namespace repair_gn {
                  (A->maxsize * A->factor >= A->minsize))
         { max = A->maxsize;
             A->maxsize *= A->factor;
-            npairs = (int*) malloc(A->maxsize * sizeof(int));
+            npairs = (int64_t*) malloc(A->maxsize * sizeof(int64_t));
             size = A->size;
             fst = A->fst;
             for (i=0;i<size;i++)
@@ -97,7 +97,7 @@ namespace repair_gn {
         }
     }
 
-    Tarray createArray (void *Rec, float factor, int minsize)
+    Tarray createArray (void *Rec, float factor, int64_t minsize)
 
     { Tarray A;
         A.Rec = Rec;
