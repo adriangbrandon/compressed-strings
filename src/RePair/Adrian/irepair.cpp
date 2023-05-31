@@ -14,6 +14,7 @@ int PRNL = 0;  // print progress on text scan
 #include "records.h"
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
 
 namespace repair_gn {
 
@@ -56,6 +57,7 @@ namespace repair_gn {
         for (i=0;i<len;i++)
         { if (text[i] > alph) alph = text[i];
         }
+        std::cerr << "Alpha: " << alph << std::endl;
         n = ++alph;
         Rec = createRecords(factor,minsize);
         Heap = createHeap(len,&Rec,factor,minsize);
@@ -413,17 +415,25 @@ namespace repair_gn {
             fprintf(stderr, "Error: cannot open file %s for writing\n", fname);
             exit(1);
         }
+        std::cerr << "Prepare 0..." << std::flush;
         prepare0 (size_input);
+        std::cerr << " done." << std::endl;
+        std::cerr << "Repair 0..." << std::flush;
         size_input = repair0 (size_input,Rf);
+        std::cerr << " done." << std::endl;
         if (size_input == -1)
         { fprintf (stderr,"Error: cannot write file %s\n",fname);
             exit(1);
         }
+        std::cerr << "Prepare ..." << std::flush;
         prepare(size_input);
+        std::cerr << " done." << std::endl;
+        std::cerr << "Repair ..." << std::flush;
         if (repair(Rf) != 0) {
             fprintf(stderr, "Error: cannot write file %s\n", fname);
             exit(1);
         }
+        std::cerr << " done." << std::endl;
         if (fclose(Rf) != 0) {
             fprintf(stderr, "Error: cannot close file %s\n", fname);
             exit(1);
