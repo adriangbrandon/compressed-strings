@@ -63,7 +63,7 @@ using namespace cds_utils;
 
 #include "HuTucker/HuTucker.h"
 #include "Huffman/Huffman.h"
-#include "RePair/RePair.h"
+#include "RePair/RePairA.h"
 #include "dicts/StringDictionary.h"
 #include "utils/Coder/DecodingTable.h"
 #include "utils/Coder/DecodingTableBuilder.h"
@@ -185,7 +185,7 @@ class StringDictionaryRPHTFC : public StringDictionary {
     Codeword *codewordsHT;   //! Hu-Tucker codeword assignment
     DecodingTable *tableHT;  //! Decoding table for HT
 
-    RePair *rp;   //! The RePair representation
+    RePairA *rp;   //! The RePair representation
     uint bitsrp;  //! Number of bits used for encoding Re-Pair symbols
 
     /** Obtaining the (encoded) header string for the given bucket.

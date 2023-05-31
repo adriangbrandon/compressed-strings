@@ -25,40 +25,65 @@
  *   Miguel A. Martinez-Prieto:	migumar2@infor.uva.es
  */
 
-#include "RePair.h"
+#include "RePairA.h"
 
 using namespace std;
 
-RePair::RePair() {
+RePairA::RePairA() {
     this->G = NULL;
     this->Cls = NULL;
     this->Cdac = NULL;
     this->maxchar = 0;
 }
 
-RePair::RePair(int *sequence, uint64_t length, uchar maxchar) {
+RePairA::RePairA(int *sequence, uint64_t length, uchar maxchar) {
     this->G = NULL;
     this->Cls = NULL;
     this->Cdac = NULL;
     this->maxchar = maxchar;
 
-    Tdiccarray *dicc;
-    IRePair compressor;
+    std::string repair_file = "repair_" + std::to_string(getpid());
+    std::string fileR = repair_file + ".R";
 
-    compressor.compress(sequence, length, (size_t *)&terminals,
-                        (size_t *)&rules, &dicc, 250*1024);
+    repair_gn::build_grammar_irepair(sequence, length, 250*1024, repair_file.c_str());
+
+    FILE *Tf;
+    struct stat s;
+
+    if (stat(fileR.c_str(), &s) != 0) {
+        fprintf(stderr, "Error: cannot stat file %s\n", fileR.c_str());
+        exit(1);
+    }
+    uint64_t n = s.st_size;
+    Tf = fopen(fileR.c_str(), "r");
+    if (Tf == NULL) {
+        fprintf(stderr, "Error: cannot open file %s for reading\n", fileR.c_str());
+        exit(1);
+    }
+
+    if (fread(&terminals, sizeof(int), 1, Tf) != 1) {
+        fprintf(stderr, "Error: cannot read file %s\n", fileR.c_str());
+        exit(1);
+    }
+    rules = (n - sizeof(int)) / sizeof(repair_gn::Tpair);
+    auto res = (repair_gn::Tpair *) malloc(rules * sizeof(repair_gn::Tpair));
+    if (fread(res, sizeof(repair_gn::Tpair), rules, Tf) != rules) {
+        fprintf(stderr, "Error: cannot read file %s\n", fileR.c_str());
+        exit(1);
+    }
+    fclose(Tf);
+
 
     // Building the array for the dictionary
     G = new LogSequence(bits(rules + terminals), 2 * rules);
 
     for (uint64_t i = 0; i < rules; i++) {
-        G->setField(2 * i, dicc->rules[i].rule.left);
-        G->setField((2 * i) + 1, dicc->rules[i].rule.right);
+        G->setField(2 * i, res[i].left);
+        G->setField((2 * i) + 1, res[i].right);
     }
-    Dictionary::destroyDicc(dicc);
 }
 
-uint RePair::expandRule(uint rule, uchar *str) {
+uint RePairA::expandRule(uint rule, uchar *str) {
     uint pos = 0;
     uint left = G->getField(2 * rule);
     uint right = G->getField((2 * rule) + 1);
@@ -80,7 +105,7 @@ uint RePair::expandRule(uint rule, uchar *str) {
     return pos;
 }
 
-int RePair::expandRuleAndCompareString(uint rule, uchar *str, uint *pos) {
+int RePairA::expandRuleAndCompareString(uint rule, uchar *str, uint *pos) {
     int cmp = 0;
 
     uint left = G->getField(2 * rule);
@@ -104,7 +129,7 @@ int RePair::expandRuleAndCompareString(uint rule, uchar *str, uint *pos) {
     return cmp;
 }
 
-int RePair::extractStringAndCompareRP(uint id, uchar *str, uint strLen) {
+int RePairA::extractStringAndCompareRP(uint id, uchar *str, uint strLen) {
     str[strLen] = maxchar;
 
     uint l = 0, pos = 0, next;
@@ -129,7 +154,7 @@ int RePair::extractStringAndCompareRP(uint id, uchar *str, uint strLen) {
     return cmp;
 }
 
-int RePair::extractStringAndCompareDAC(uint id, uchar *str, uint strLen) {
+int RePairA::extractStringAndCompareDAC(uint id, uchar *str, uint strLen) {
     uint l = 0, pos = 0, next;
     int cmp = 0;
 
@@ -153,7 +178,7 @@ int RePair::extractStringAndCompareDAC(uint id, uchar *str, uint strLen) {
         return -str[pos];
 }
 
-int RePair::expandRuleAndComparePrefixDAC(uint rule, uchar *str, uint *pos) {
+int RePairA::expandRuleAndComparePrefixDAC(uint rule, uchar *str, uint *pos) {
     int cmp = 0;
 
     uint left = G->getField(2 * rule);
@@ -179,7 +204,7 @@ int RePair::expandRuleAndComparePrefixDAC(uint rule, uchar *str, uint *pos) {
     return cmp;
 }
 
-int RePair::extractPrefixAndCompareDAC(uint id, uchar *prefix, uint prefixLen) {
+int RePairA::extractPrefixAndCompareDAC(uint id, uchar *prefix, uint prefixLen) {
     uint l = 0, pos = 0, next;
     int cmp = 0;
 
@@ -206,7 +231,7 @@ int RePair::extractPrefixAndCompareDAC(uint id, uchar *prefix, uint prefixLen) {
         return -prefix[pos];
 }
 
-void RePair::save(ofstream &out, uint encoding) {
+void RePairA::save(ofstream &out, uint encoding) {
     saveValue<uchar>(out, maxchar);
     saveValue<uint64_t>(out, terminals);
     saveValue<uint64_t>(out, rules);
@@ -220,15 +245,15 @@ void RePair::save(ofstream &out, uint encoding) {
         Cls->save(out);
 }
 
-void RePair::save(ofstream &out) {
+void RePairA::save(ofstream &out) {
     saveValue<uchar>(out, maxchar);
     saveValue<uint64_t>(out, terminals);
     saveValue<uint64_t>(out, rules);
     G->save(out);
 }
 
-RePair *RePair::load(ifstream &in) {
-    RePair *dict = new RePair();
+RePairA *RePairA::load(ifstream &in) {
+    RePairA *dict = new RePairA();
 
     dict->maxchar = loadValue<uchar>(in);
     dict->terminals = loadValue<uint64_t>(in);
@@ -245,8 +270,8 @@ RePair *RePair::load(ifstream &in) {
     return dict;
 }
 
-RePair *RePair::loadNoSeq(ifstream &in) {
-    RePair *dict = new RePair();
+RePairA *RePairA::loadNoSeq(ifstream &in) {
+    RePairA *dict = new RePairA();
 
     dict->maxchar = loadValue<uchar>(in);
     dict->terminals = loadValue<uint64_t>(in);
@@ -256,13 +281,13 @@ RePair *RePair::loadNoSeq(ifstream &in) {
     return dict;
 }
 
-size_t RePair::getSize() {
-    if (Cdac != NULL) return G->getSize() + Cdac->getSize() + sizeof(RePair);
-    if (Cls != NULL) return G->getSize() + Cls->getSize() + sizeof(RePair);
-    return G->getSize() + sizeof(RePair);
+size_t RePairA::getSize() {
+    if (Cdac != NULL) return G->getSize() + Cdac->getSize() + sizeof(RePairA);
+    if (Cls != NULL) return G->getSize() + Cls->getSize() + sizeof(RePairA);
+    return G->getSize() + sizeof(RePairA);
 }
 
-RePair::~RePair() {
+RePairA::~RePairA() {
     delete G;
     if (Cls != NULL) delete Cls;
     if (Cdac != NULL) delete Cdac;

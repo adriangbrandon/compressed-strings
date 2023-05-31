@@ -27,6 +27,8 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #ifndef BASICSINCLUDED
 #define BASICSINCLUDED
 
+typedef long long relong;
+
 void *myMalloc(long long n);  // safe malloc/realloc
 void *myRealloc(void *p, long long n);
 
@@ -37,7 +39,7 @@ typedef struct {
     int left, right;
 } Tpair;
 
-extern int NullFreq;
+extern relong NullFreq;
 
 int blog(int x);  // bits to represent x
 

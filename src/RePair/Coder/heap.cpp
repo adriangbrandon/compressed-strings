@@ -31,11 +31,11 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include <stdio.h>
 #include <stdlib.h>
 
-Theap Heap::createHeap(int64_t u, Trarray *Rec, float factor, int64_t minsize) {
+Theap Heap::createHeap(relong u, Trarray *Rec, float factor, int64_t minsize) {
     Theap H;
     int64_t i;
     H.sqrtu = 2;
-    while (H.sqrtu * H.sqrtu < u) H.sqrtu++;
+    while ((relong)H.sqrtu * (relong)H.sqrtu < u) H.sqrtu++;
     H.infreq = (Tarray *)malloc(H.sqrtu * sizeof(Tarray));
     for (i = 1; i < H.sqrtu; i++)
         H.infreq[i] = ArrayG::createArray(Rec, factor, minsize);
@@ -54,7 +54,7 @@ Theap Heap::createHeap(int64_t u, Trarray *Rec, float factor, int64_t minsize) {
 }
 
 void Heap::destroyHeap(Theap *H) {
-    int64_t i;
+    int i;
     //    Thfreq *l,*n;
     for (i = 1; i < H->sqrtu; i++) ArrayG::destroyArray(&H->infreq[i]);
     free(H->infreq);
@@ -76,7 +76,7 @@ void Heap::move(Tarray A, int64_t i, int64_t j, Trecord *rec) {
 void Heap::prnH(Theap *H) {
     Thfreq *f;
     static int X = 0;
-    int64_t prevf = 1ULL << 60;
+    relong prevf = (((relong)1)<<(8*sizeof(relong)-2))-1;
     int64_t fp = H->largest;
     if (fp == -1) return;
     X++;
@@ -100,7 +100,7 @@ void Heap::incFreq(Theap *H, int64_t id) {
 
     if ((rec[id].pair.left == 0) || (rec[id].pair.right == 0)) return;
 
-    int64_t freq = rec[id].freq++;
+    relong freq = rec[id].freq++;
     int64_t hpos = rec[id].hpos;
 
     if (PRNH) prnH(H);

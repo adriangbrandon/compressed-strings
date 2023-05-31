@@ -135,7 +135,7 @@ StringDictionaryRPHTFC::StringDictionaryRPHTFC(IteratorDictString *it,
 
     cerr << "Obtaining the Re-Pair encoding" << endl;
     // Obtaining the Re-Pair encoding
-    rp = new RePair(rpdict, ptrpdict, 255);
+    rp = new RePairA(rpdict, ptrpdict, 255);
     bitsrp = rp->getBits();
 
     vector<size_t> intStrings;               // Encoded internal strings
@@ -555,7 +555,7 @@ StringDictionary *StringDictionaryRPHTFC::load(ifstream &in) {
     dict->coderHT = new StatCoder(dict->tableHT, dict->codewordsHT);
 
     dict->bitsrp = loadValue<uint32_t>(in);
-    dict->rp = RePair::loadNoSeq(in);
+    dict->rp = RePairA::loadNoSeq(in);
 
     return dict;
 }

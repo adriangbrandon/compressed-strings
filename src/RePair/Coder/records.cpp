@@ -95,14 +95,15 @@ void Records::destroyRecords(Trarray *Rec) {
 void Records::removeRecord(Trarray *Rec, int id) {
     Tlist *L = (Tlist *)Rec->List;
     HashRP::deleteHash((Thash *)Rec->Hash, id);  // mark del in hash
-    if ((Rec->records[id].cpos != -1) &&
-        (L[Rec->records[id].cpos].prev == -id - 1))
-        L[Rec->records[id].cpos].prev = NullFreq;  // null ptr from L
-    if (id != Rec->size - 1) {
-        Rec->records[id] = Rec->records[Rec->size - 1];
-        HashRP::hashRepos((Thash *)Rec->Hash, id);
-        Heap::heapRepos((Theap *)Rec->Heap, id);
-        L[Rec->records[id].cpos].prev = -id - 1;
+    if ((Rec->records[id].cpos != -1) && (L != NULL) &&
+        (L[Rec->records[id].cpos].prev == -id-1))
+        L[Rec->records[id].cpos].prev = NullFreq; // null ptr from L
+    if (id != Rec->size-1)
+    { Rec->records[id] = Rec->records[Rec->size-1];
+        HashRP::hashRepos ((Thash *) Rec->Hash,id);
+        Heap::heapRepos ((Theap *) Rec->Heap,id);
+        if ((Rec->records[id].cpos != -1) && (L != NULL))
+            L[Rec->records[id].cpos].prev = -id-1;
     }
     deleteRecord(Rec);
 }

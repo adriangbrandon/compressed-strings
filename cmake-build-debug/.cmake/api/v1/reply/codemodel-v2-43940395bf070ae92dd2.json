@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "libCSD64",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "build::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-build-Debug-855ad994ffe64a3fd122.json",
+					"name" : "build",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "libCSD64::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-libCSD64-Debug-9365d7dae1057fe55175.json",
+					"name" : "libCSD64",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test-single::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-single-Debug-75c8e106ee3e7a385b1d.json",
+					"name" : "test-single",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test-substr::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-substr-Debug-a0acb308bd8cdf8fd9dc.json",
+					"name" : "test-substr",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/adrian/CLionProjects/compressed-strings/cmake-build-debug",
+		"source" : "/Users/adrian/CLionProjects/compressed-strings"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

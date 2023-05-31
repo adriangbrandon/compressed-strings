@@ -30,9 +30,12 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 #include <stdlib.h>
 
-int IRePair::compress(int *text, uint64_t length, size_t *csymbols,
-                      size_t *crules, Tdiccarray **rules) {
-    C = text;
+int IRePair::compress(int *t, uint64_t length, size_t *csymbols,
+                      size_t *crules, Tdiccarray **rules, int aMB) {
+    text = t;
+    MB = aMB;
+    prepare0(length);
+    length = repair0(length);
     prepare(length);
     repair();
 
@@ -47,12 +50,118 @@ int IRePair::compress(int *text, uint64_t length, size_t *csymbols,
     *csymbols = alph;
     *crules = n - alph;
     *rules = &Dicc;
+   /* t = (int*) malloc(u * sizeof(int));
+    relong i = 0;
+    while(i < u){
+        t[i] = (int) C[i];
+        ++i;
+    }*/
 
     return 0;
 }
 
-int IRePair::repair() {
-    int oid, id, cpos;
+relong IRePair::repair0(relong len) {
+
+    int oid,id;
+    relong cpos,pos;
+    Trecord *rec,*orec;
+    Tpair pair;
+    int left,right;
+
+    while (n+1 > 0)
+    {
+        if ((len /1024/1024) * 3 * sizeof(relong) <= MB) return len;
+        else if (PRNP) printf ("Avoiding to use %lli MB\n",
+                               (len /1024/1024) * 3 * sizeof(relong));
+        if (PRNR) prnRec();
+        oid = Heap::extractMax(&Heap);
+        if (oid == -1) break; // the end!!
+        orec = &Rec.records[oid];
+
+        // Adding a new rule to the dictionary
+        int lrule = 0;
+
+        if (orec->pair.left < alph)
+            lrule++;
+        else
+            lrule += Dicc.rules[orec->pair.left - alph].l;
+
+        if (orec->pair.right < alph)
+            lrule++;
+        else
+            lrule += Dicc.rules[orec->pair.right - alph].l;
+
+        Trule nrule = {orec->pair, lrule};
+        Dictionary::insertRule(&Dicc, nrule);
+
+        if (PRNP)
+        { printf("Chosen pair %i = (",n);
+            prnSym(orec->pair.left);
+            printf(",");
+            prnSym(orec->pair.right);
+            printf(") (%lli occs)\n",orec->freq);
+        }
+        pos = 0;
+        for (cpos=0;cpos<len-1;cpos++)
+        { if ((text[cpos] != left) || (text[cpos+1] != right))
+                text[pos] = text[cpos];
+            else // occurrence of the pair to modify
+            {   // decr freqs of pairs that disappear
+                if (pos > 0)
+                { pair.left = text[pos-1]; pair.right = text[cpos];
+                    id = HashRP::searchHash(Hash,pair);
+                    if (id != -1) // may not exist if purgeHeap'd
+                    { if (id != oid) Heap::decFreq(&Heap,id); //not to my pair!
+                    }
+                }
+                if (cpos < len-2)
+                { pair.left = text[cpos+1]; pair.right = text[cpos+2];
+                    id = HashRP::searchHash(Hash,pair);
+                    if (id != -1) // may not exist if purgeHeap'd
+                    { if (id != oid) Heap::decFreq(&Heap,id); //not to my pair!
+                    }
+                }
+                // create or incr freqs of pairs that appear
+                if (pos > 0)
+                { pair.left = text[pos-1];
+                    pair.right = n;
+                    id = HashRP::searchHash(Hash,pair);
+                    if (id == -1) // new pair, insert
+                    { id = Records::insertRecord (&Rec,pair);
+                    }
+                    else
+                    { Heap::incFreq (&Heap,id);
+                    }
+                }
+                if (cpos < len-2)
+                { pair.left = n; pair.right = text[cpos+2];
+                    id = HashRP::searchHash(Hash,pair);
+                    if (id == -1) // new pair, insert
+                    { id = Records::insertRecord (&Rec,pair);
+                    }
+                    else
+                    { Heap::incFreq (&Heap,id);
+                    }
+                }
+                // actually do the substitution
+                text[pos] = n; cpos++;
+            }
+            pos++;
+        }
+        if (cpos == len-1) text[pos++] = text[cpos];
+        len = pos;
+        Records::removeRecord (&Rec,oid);
+        n++;
+        Heap::purgeHeap(&Heap); // remove freq 1 from heap
+        text = (int*)realloc ((int*)text,len*sizeof(int)); // should not move it
+    }
+    Heap::purgeHeap(&Heap); // remove freq 1 from heap, if it exited for oid=-1
+    return len;
+}
+
+relong IRePair::repair() {
+    int oid, id;
+    relong cpos;
     Trecord *rec, *orec;
     Tpair pair;
 
@@ -88,7 +197,7 @@ int IRePair::repair() {
             printf(") (%lu occs)\n", orec->freq);
         }
         while (cpos != -1) {
-            int64_t ant, sgte, ssgte;
+            relong ant, sgte, ssgte;
             // replacing bc->e in abcd, b = cpos, c = sgte, d = ssgte
             if (C[cpos + 1] < 0)
                 sgte = -C[cpos + 1] - 1;
@@ -180,7 +289,7 @@ int IRePair::repair() {
                 rec->cpos = ant;
             }
             C[cpos] = n;
-            if (ssgte != static_cast<int64_t>(u)) C[ssgte - 1] = -cpos - 1;
+            if (ssgte != u) C[ssgte - 1] = -cpos - 1;
             C[cpos + 1] = -ssgte - 1;
             c--;
             orec = &Rec.records[oid];  // just in case of Rec.records realloc'd
@@ -190,36 +299,69 @@ int IRePair::repair() {
         Records::removeRecord(&Rec, oid);
         n++;
         Heap::purgeHeap(&Heap);  // remove freq 1 from heap
-                                 /*
-                                 if (c < factor * u) // compact C
-                                    { int i,ni;
-                                      i = 0;
-                                      for (ni=0;ni<c-1;ni++)
-                                        { C[ni] = C[i];
-                                          L[ni] = L[i];
-                                          if (L[ni].prev < 0)
-                                             { if (L[ni].prev != NullFreq) // real ptr
-                                                  Rec.records[-L[ni].prev-1].cpos = ni;
-                                             }
-                                          else L[L[ni].prev].next = ni;
-                                          if (L[ni].next != -1) L[L[ni].next].prev = ni;
-                                          i++; if (C[i] < 0) i = -C[i]-1;
-                                        }
-                                      C[ni] = C[i];
-                                      u = c;
-                                      C = (int*)realloc (C, c * sizeof(int));
-                                      L = (Tlist*)realloc (L, c * sizeof(Tlist));
-                                  Records::assocRecords (&Rec,&Hash,&Heap,L);
-                                    }*/
+
+         if (c < factor * u) // compact C
+            { relong i,ni;
+              i = 0;
+              for (ni=0;ni<c-1;ni++)
+                { C[ni] = C[i];
+                  L[ni] = L[i];
+                  if (L[ni].prev < 0)
+                     { if (L[ni].prev != NullFreq) // real ptr
+                          Rec.records[-L[ni].prev-1].cpos = ni;
+                     }
+                  else L[L[ni].prev].next = ni;
+                  if (L[ni].next != -1) L[L[ni].next].prev = ni;
+                  i++; if (C[i] < 0) i = -C[i]-1;
+                }
+              C[ni] = C[i];
+              u = c;
+              C = (relong*) realloc (C, c * sizeof(relong));
+              L = (Tlist*)realloc (L, c * sizeof(Tlist));
+          Records::assocRecords (&Rec,&Hash,&Heap,L);
+            }
     }
     return 0;
 }
+void IRePair::prepare0 (relong len)
 
-void IRePair::prepare(uint64_t len) {
-    uint64_t i;
+{ relong i;
+    int id;
+    Tpair pair;
+    alph = 0;
+    for (i=0;i<len;i++)
+    { if (text[i] > alph) alph = text[i];
+    }
+    n = ++alph;
+    Rec = Records::createRecords(factor,minsize);
+    Heap = Heap::createHeap(len,&Rec,factor,minsize);
+    Hash = HashRP::createHash(256*256,&Rec);
+    Records::assocRecords (&Rec,&Hash,&Heap,NULL);
+    if ((len /1024/1024) * 3 * sizeof(relong) <= MB) return;
+    did0 = 1;
+    for (i=0;i<len-1;i++)
+    { pair.left = text[i]; pair.right = text[i+1];
+        id = HashRP::searchHash (Hash,pair);
+        if (id == -1) // new pair, insert
+        { id = Records::insertRecord (&Rec,pair);
+        }
+        else
+        { Heap::incFreq (&Heap,id);
+        }
+        if (PRNL && (i%1000000 == 0)) printf ("Processed %lli ints\n",i);
+    }
+    Heap::purgeHeap (&Heap);
+}
+
+void IRePair::prepare(relong len) {
+    relong i;
     int id;
     Tpair pair;
     c = u = len;
+    C = (relong*)malloc(u*sizeof(relong));
+    for (i=0;i<u;i++) C[i] = text[i];
+    free (text);
+
     alph = 0;
     for (i = 0; i < u; i++) {
         if (C[i] > alph) alph = C[i];
@@ -239,17 +381,27 @@ void IRePair::prepare(uint64_t len) {
         id = HashRP::searchHash(Hash, pair);
         if (id == -1)  // new pair, insert
         {
-            id = Records::insertRecord(&Rec, pair);
+            if (did0) L[i].prev = NullFreq;
+            else {
+                id = Records::insertRecord (&Rec,pair);
+                L[i].prev = -id-1;
+                Rec.records[id].cpos = i;
+            }
             L[i].next = -1;
         } else {
-            L[i].next = Rec.records[id].cpos;
-            L[L[i].next].prev = i;
-            Heap::incFreq(&Heap, id);
+            if (Rec.records[id].cpos == -1) // first time I see it this pass
+            { L[i].next = -1;
+            }
+            else
+            { L[i].next = Rec.records[id].cpos;
+                L[L[i].next].prev = i;
+                if (!did0) Heap::incFreq (&Heap,id);
+            }
+            L[i].prev = -id-1;
+            Rec.records[id].cpos = i;
         }
-        L[i].prev = -id - 1;
-        Rec.records[id].cpos = i;
-        if (PRNL && (i % 10000 == 0)) printf("Processed %lu chars\n", i);
     }
+    L[i].prev = NullFreq; L[i].next = -1;
     Heap::purgeHeap(&Heap);
 }
 

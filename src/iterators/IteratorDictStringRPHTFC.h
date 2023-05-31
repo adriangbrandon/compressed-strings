@@ -34,7 +34,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../RePair/RePair.h"
+#include "../RePair/RePairA.h"
 #include "../utils/Coder/DecodingTable.h"
 #include "../utils/LogSequence.h"
 #include "../utils/Utils.h"
@@ -60,7 +60,7 @@ class IteratorDictStringRPHTFC : public IteratorDictString {
         @param maxcomplength: largest compressed string length.
     */
     IteratorDictStringRPHTFC(DecodingTable *tableHT, Codeword *codewordsHT,
-                             RePair *rp, uint bitsrp, uchar *ptr,
+                             RePairA *rp, uint bitsrp, uchar *ptr,
                              LogSequence *blStrings, size_t bucket, uint offset,
                              uint bucketsize, size_t scanneable, uint maxlength,
                              uint maxcomplength) {
@@ -139,7 +139,7 @@ class IteratorDictStringRPHTFC : public IteratorDictString {
     Codeword *codewordsHT;   //! HuTucker codewords
     uint maxcomplength;      //! Largest compressed string length (HT)
 
-    RePair *rp;   //! The RePair representation
+    RePairA *rp;   //! The RePair representation
     uint bitsrp;  //! Number of bits used for encoding Re-Pair symbols
 
     LogSequence *blStrings;  //! Positional index to the strings representation

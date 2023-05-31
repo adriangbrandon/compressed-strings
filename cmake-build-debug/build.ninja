@@ -1,0 +1,824 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: libCSD64
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/adrian/CLionProjects/compressed-strings/cmake-build-debug/
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target libCSD64
+
+
+#############################################
+# Order-only phony target for libCSD64
+
+build cmake_object_order_depends_target_libCSD64: phony || CMakeFiles/libCSD64.dir
+
+build CMakeFiles/libCSD64.dir/src/FMIndex/SSA.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/FMIndex/SSA.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/FMIndex/SSA.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/FMIndex
+
+build CMakeFiles/libCSD64.dir/src/FMIndex/SuffixArray.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/FMIndex/SuffixArray.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/FMIndex/SuffixArray.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/FMIndex
+
+build CMakeFiles/libCSD64.dir/src/Hash/Hash.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Hash/Hash.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Hash/Hash.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Hash
+
+build CMakeFiles/libCSD64.dir/src/Hash/HashBBdh.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Hash/HashBBdh.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Hash/HashBBdh.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Hash
+
+build CMakeFiles/libCSD64.dir/src/Hash/HashBdh.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Hash/HashBdh.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Hash/HashBdh.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Hash
+
+build CMakeFiles/libCSD64.dir/src/Hash/HashDAC.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Hash/HashDAC.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Hash/HashDAC.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Hash
+
+build CMakeFiles/libCSD64.dir/src/Hash/Hashdh.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Hash/Hashdh.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Hash/Hashdh.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Hash
+
+build CMakeFiles/libCSD64.dir/src/HuTucker/HuTucker.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/HuTucker/HuTucker.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/HuTucker/HuTucker.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/HuTucker
+
+build CMakeFiles/libCSD64.dir/src/Huffman/Huffman.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Huffman/Huffman.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Huffman/Huffman.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Huffman
+
+build CMakeFiles/libCSD64.dir/src/Huffman/huff.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/Huffman/huff.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/Huffman/huff.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/Huffman
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/CRePair.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/CRePair.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/CRePair.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/IRePair.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/IRePair.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/IRePair.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/arrayg.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/arrayg.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/arrayg.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/basics.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/basics.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/basics.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/dictionary.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/dictionary.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/dictionary.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/hash.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/hash.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/hash.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/heap.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/heap.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/heap.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/Coder/records.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/Coder/records.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/Coder/records.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair/Coder
+
+build CMakeFiles/libCSD64.dir/src/RePair/RePair.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/RePair/RePair.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/RePair/RePair.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/RePair
+
+build CMakeFiles/libCSD64.dir/src/dicts/StringDictionary.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/dicts/StringDictionary.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/dicts/StringDictionary.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/dicts
+
+build CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryFMINDEX.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/dicts/StringDictionaryFMINDEX.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryFMINDEX.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/dicts
+
+build CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryHHTFC.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/dicts/StringDictionaryHHTFC.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryHHTFC.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/dicts
+
+build CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryPFC.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/dicts/StringDictionaryPFC.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryPFC.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/dicts
+
+build CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryRPHTFC.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/dicts/StringDictionaryRPHTFC.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryRPHTFC.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/dicts
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequence.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequence.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequence.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequence375.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequence375.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequence375.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilder375.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceBuilder375.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilder375.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderDArray.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceBuilderDArray.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderDArray.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderRG.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceBuilderRG.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderRG.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderRRR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceBuilderRRR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderRRR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderSDArray.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceBuilderSDArray.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderSDArray.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceDArray.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceDArray.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceDArray.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceRG.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceRG.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceRG.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceRRR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceRRR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceRRR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceSDArray.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/BitSequenceSDArray.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceSDArray.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/TableOffsetRRR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/TableOffsetRRR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/TableOffsetRRR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/sdarraySadakane.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/bitsequence/sdarraySadakane.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/sdarraySadakane.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/mapper/Mapper.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/mapper/Mapper.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/mapper/Mapper.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/mapper
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/mapper/MapperCont.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/mapper/MapperCont.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/mapper/MapperCont.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/mapper
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/mapper/MapperNone.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/mapper/MapperNone.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/mapper/MapperNone.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/mapper
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/permutation/Permutation.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/permutation/Permutation.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/permutation/Permutation.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/permutation
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/permutation/PermutationBuilderMRRR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/permutation/PermutationBuilderMRRR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/permutation/PermutationBuilderMRRR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/permutation
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/permutation/PermutationMRRR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/permutation/PermutationMRRR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/permutation/PermutationMRRR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/permutation
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/permutation/perm.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/permutation/perm.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/permutation/perm.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/permutation
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/BitmapsSequence.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/BitmapsSequence.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/BitmapsSequence.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/Sequence.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/Sequence.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/Sequence.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceAlphPart.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceAlphPart.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceAlphPart.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderAlphPart.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceBuilderAlphPart.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderAlphPart.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderGMR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceBuilderGMR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderGMR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderGMRChunk.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceBuilderGMRChunk.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderGMRChunk.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderWaveletTree.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceBuilderWaveletTree.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderWaveletTree.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderWaveletTreeNoptrs.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceBuilderWaveletTreeNoptrs.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderWaveletTreeNoptrs.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceGMR.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceGMR.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceGMR.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceGMRChunk.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/SequenceGMRChunk.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceGMRChunk.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/WaveletTree.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/WaveletTree.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/WaveletTree.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/WaveletTreeNoptrs.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/WaveletTreeNoptrs.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/WaveletTreeNoptrs.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/wt_coder.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder_binary.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/wt_coder_binary.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder_binary.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder_huff.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/wt_coder_huff.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder_huff.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/wt_node.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node_internal.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/wt_node_internal.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node_internal.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node_leaf.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/sequence/wt_node_leaf.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node_leaf.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/sequence
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/textindex/TextIndex.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/textindex/TextIndex.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/textindex/TextIndex.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/textindex
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/textindex/TextIndexCSA.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/textindex/TextIndexCSA.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/textindex/TextIndexCSA.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/textindex
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/textindex/comparray4.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/textindex/comparray4.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/textindex/comparray4.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/textindex
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/textindex/mmap.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/textindex/mmap.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/textindex/mmap.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/textindex
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/textindex/qsufsort.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/textindex/qsufsort.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/textindex/qsufsort.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/textindex
+
+build CMakeFiles/libCSD64.dir/src/libcds-static/textindex/suftest3.test.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-static/textindex/suftest3.test.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-static/textindex/suftest3.test.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-static/textindex
+
+build CMakeFiles/libCSD64.dir/src/libcds-utils/Array.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-utils/Array.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-utils/Array.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-utils
+
+build CMakeFiles/libCSD64.dir/src/libcds-utils/BitString.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-utils/BitString.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-utils/BitString.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-utils
+
+build CMakeFiles/libCSD64.dir/src/libcds-utils/cppUtils.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/libcds-utils/cppUtils.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/libcds-utils/cppUtils.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/libcds-utils
+
+build CMakeFiles/libCSD64.dir/src/main/build.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/main/build.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/main/build.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/main
+
+build CMakeFiles/libCSD64.dir/src/main/test-single.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/main/test-single.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/main/test-single.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/main
+
+build CMakeFiles/libCSD64.dir/src/main/test-substr.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/main/test-substr.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/main/test-substr.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/main
+
+build CMakeFiles/libCSD64.dir/src/utils/Coder/BinaryNode.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/Coder/BinaryNode.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/Coder/BinaryNode.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils/Coder
+
+build CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTable.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/Coder/DecodingTable.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTable.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils/Coder
+
+build CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTableBuilder.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/Coder/DecodingTableBuilder.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTableBuilder.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils/Coder
+
+build CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTree.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/Coder/DecodingTree.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTree.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils/Coder
+
+build CMakeFiles/libCSD64.dir/src/utils/Coder/StatCoder.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/Coder/StatCoder.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/Coder/StatCoder.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils/Coder
+
+build CMakeFiles/libCSD64.dir/src/utils/DAC_BVLS.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/DAC_BVLS.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/DAC_BVLS.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils
+
+build CMakeFiles/libCSD64.dir/src/utils/DAC_VLS.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/DAC_VLS.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/DAC_VLS.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils
+
+build CMakeFiles/libCSD64.dir/src/utils/LogSequence.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/LogSequence.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/LogSequence.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils
+
+build CMakeFiles/libCSD64.dir/src/utils/VByte.cpp.o: CXX_COMPILER__libCSD64_Debug /Users/adrian/CLionProjects/compressed-strings/src/utils/VByte.cpp || cmake_object_order_depends_target_libCSD64
+  DEP_FILE = CMakeFiles/libCSD64.dir/src/utils/VByte.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  OBJECT_FILE_DIR = CMakeFiles/libCSD64.dir/src/utils
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target libCSD64
+
+
+#############################################
+# Link the static library bin/liblibCSD64.a
+
+build bin/liblibCSD64.a: CXX_STATIC_LIBRARY_LINKER__libCSD64_Debug CMakeFiles/libCSD64.dir/src/FMIndex/SSA.cpp.o CMakeFiles/libCSD64.dir/src/FMIndex/SuffixArray.cpp.o CMakeFiles/libCSD64.dir/src/Hash/Hash.cpp.o CMakeFiles/libCSD64.dir/src/Hash/HashBBdh.cpp.o CMakeFiles/libCSD64.dir/src/Hash/HashBdh.cpp.o CMakeFiles/libCSD64.dir/src/Hash/HashDAC.cpp.o CMakeFiles/libCSD64.dir/src/Hash/Hashdh.cpp.o CMakeFiles/libCSD64.dir/src/HuTucker/HuTucker.cpp.o CMakeFiles/libCSD64.dir/src/Huffman/Huffman.cpp.o CMakeFiles/libCSD64.dir/src/Huffman/huff.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/CRePair.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/IRePair.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/arrayg.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/basics.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/dictionary.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/hash.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/heap.cpp.o CMakeFiles/libCSD64.dir/src/RePair/Coder/records.cpp.o CMakeFiles/libCSD64.dir/src/RePair/RePair.cpp.o CMakeFiles/libCSD64.dir/src/dicts/StringDictionary.cpp.o CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryFMINDEX.cpp.o CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryHHTFC.cpp.o CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryPFC.cpp.o CMakeFiles/libCSD64.dir/src/dicts/StringDictionaryRPHTFC.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequence.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequence375.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilder375.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderDArray.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderRG.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderRRR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceBuilderSDArray.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceDArray.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceRG.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceRRR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/BitSequenceSDArray.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/TableOffsetRRR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/bitsequence/sdarraySadakane.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/mapper/Mapper.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/mapper/MapperCont.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/mapper/MapperNone.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/permutation/Permutation.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/permutation/PermutationBuilderMRRR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/permutation/PermutationMRRR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/permutation/perm.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/BitmapsSequence.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/Sequence.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceAlphPart.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderAlphPart.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderGMR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderGMRChunk.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderWaveletTree.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceBuilderWaveletTreeNoptrs.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceGMR.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/SequenceGMRChunk.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/WaveletTree.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/WaveletTreeNoptrs.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder_binary.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_coder_huff.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node_internal.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/sequence/wt_node_leaf.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/textindex/TextIndex.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/textindex/TextIndexCSA.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/textindex/comparray4.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/textindex/mmap.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/textindex/qsufsort.cpp.o CMakeFiles/libCSD64.dir/src/libcds-static/textindex/suftest3.test.cpp.o CMakeFiles/libCSD64.dir/src/libcds-utils/Array.cpp.o CMakeFiles/libCSD64.dir/src/libcds-utils/BitString.cpp.o CMakeFiles/libCSD64.dir/src/libcds-utils/cppUtils.cpp.o CMakeFiles/libCSD64.dir/src/main/build.cpp.o CMakeFiles/libCSD64.dir/src/main/test-single.cpp.o CMakeFiles/libCSD64.dir/src/main/test-substr.cpp.o CMakeFiles/libCSD64.dir/src/utils/Coder/BinaryNode.cpp.o CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTable.cpp.o CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTableBuilder.cpp.o CMakeFiles/libCSD64.dir/src/utils/Coder/DecodingTree.cpp.o CMakeFiles/libCSD64.dir/src/utils/Coder/StatCoder.cpp.o CMakeFiles/libCSD64.dir/src/utils/DAC_BVLS.cpp.o CMakeFiles/libCSD64.dir/src/utils/DAC_VLS.cpp.o CMakeFiles/libCSD64.dir/src/utils/LogSequence.cpp.o CMakeFiles/libCSD64.dir/src/utils/VByte.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+  LANGUAGE_COMPILE_FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer
+  OBJECT_DIR = CMakeFiles/libCSD64.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = bin/liblibCSD64.a
+  TARGET_PDB = libCSD64.a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target build
+
+
+#############################################
+# Order-only phony target for build
+
+build cmake_object_order_depends_target_build: phony || cmake_object_order_depends_target_libCSD64
+
+build CMakeFiles/build.dir/src/main/build.cpp.o: CXX_COMPILER__build_Debug /Users/adrian/CLionProjects/compressed-strings/src/main/build.cpp || cmake_object_order_depends_target_build
+  DEP_FILE = CMakeFiles/build.dir/src/main/build.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/build.dir
+  OBJECT_FILE_DIR = CMakeFiles/build.dir/src/main
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target build
+
+
+#############################################
+# Link the executable bin/build
+
+build bin/build: CXX_EXECUTABLE_LINKER__build_Debug CMakeFiles/build.dir/src/main/build.cpp.o | bin/liblibCSD64.a || bin/liblibCSD64.a
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+  LINK_LIBRARIES = bin/liblibCSD64.a
+  OBJECT_DIR = CMakeFiles/build.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = bin/build
+  TARGET_PDB = build.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test-single
+
+
+#############################################
+# Order-only phony target for test-single
+
+build cmake_object_order_depends_target_test-single: phony || cmake_object_order_depends_target_libCSD64
+
+build CMakeFiles/test-single.dir/src/main/test-single.cpp.o: CXX_COMPILER__test-single_Debug /Users/adrian/CLionProjects/compressed-strings/src/main/test-single.cpp || cmake_object_order_depends_target_test-single
+  DEP_FILE = CMakeFiles/test-single.dir/src/main/test-single.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/test-single.dir
+  OBJECT_FILE_DIR = CMakeFiles/test-single.dir/src/main
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test-single
+
+
+#############################################
+# Link the executable bin/test-single
+
+build bin/test-single: CXX_EXECUTABLE_LINKER__test-single_Debug CMakeFiles/test-single.dir/src/main/test-single.cpp.o | bin/liblibCSD64.a || bin/liblibCSD64.a
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+  LINK_LIBRARIES = bin/liblibCSD64.a
+  OBJECT_DIR = CMakeFiles/test-single.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = bin/test-single
+  TARGET_PDB = test-single.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test-substr
+
+
+#############################################
+# Order-only phony target for test-substr
+
+build cmake_object_order_depends_target_test-substr: phony || cmake_object_order_depends_target_libCSD64
+
+build CMakeFiles/test-substr.dir/src/main/test-substr.cpp.o: CXX_COMPILER__test-substr_Debug /Users/adrian/CLionProjects/compressed-strings/src/main/test-substr.cpp || cmake_object_order_depends_target_test-substr
+  DEP_FILE = CMakeFiles/test-substr.dir/src/main/test-substr.cpp.o.d
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/adrian/CLionProjects/compressed-strings/src
+  OBJECT_DIR = CMakeFiles/test-substr.dir
+  OBJECT_FILE_DIR = CMakeFiles/test-substr.dir/src/main
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test-substr
+
+
+#############################################
+# Link the executable bin/test-substr
+
+build bin/test-substr: CXX_EXECUTABLE_LINKER__test-substr_Debug CMakeFiles/test-substr.dir/src/main/test-substr.cpp.o | bin/liblibCSD64.a || bin/liblibCSD64.a
+  FLAGS = -g -Wall -Wextra -O0 -g3 -fsanitize=undefined -fsanitize=address -fsanitize=integer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+  LINK_LIBRARIES = bin/liblibCSD64.a
+  OBJECT_DIR = CMakeFiles/test-substr.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = bin/test-substr
+  TARGET_PDB = test-substr.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/adrian/CLionProjects/compressed-strings/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/adrian/CLionProjects/compressed-strings/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/adrian/CLionProjects/compressed-strings -B/Users/adrian/CLionProjects/compressed-strings/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+build build: phony bin/build
+
+build libCSD64: phony bin/liblibCSD64.a
+
+build liblibCSD64.a: phony bin/liblibCSD64.a
+
+build test-single: phony bin/test-single
+
+build test-substr: phony bin/test-substr
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/adrian/CLionProjects/compressed-strings/cmake-build-debug
+
+build all: phony bin/liblibCSD64.a bin/build bin/test-single bin/test-substr
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/adrian/CLionProjects/compressed-strings/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/adrian/CLionProjects/compressed-strings/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

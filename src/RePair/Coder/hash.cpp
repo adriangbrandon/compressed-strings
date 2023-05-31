@@ -34,8 +34,8 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 #include "hash.h"
 
 int HashRP::searchHash(Thash H, Tpair p) {
-    relong u = ((relong)p.left) << (8 * sizeof(int)) | (relong)p.right;
-    int k = ((PRIME * u) >> (8 * sizeof(int))) & H.maxpos;
+    urelong u = ((urelong)p.left) << (8 * sizeof(int)) | (urelong)p.right;
+    int k = ((LPRIME * u) >> (8 * sizeof(int))) & H.maxpos;
     Trecord *recs = H.Rec->records;
     while (H.table[k] != -1) {
         if ((H.table[k] >= 0) && (recs[H.table[k]].pair.left == p.left) &&
@@ -68,7 +68,7 @@ Thash HashRP::createHash(int maxpos, Trarray *Rec) {
 
 int HashRP::finsertHash(Thash H, Tpair p) {
     relong u = ((relong)p.left) << (8 * sizeof(int)) | (relong)p.right;
-    auto k = ((PRIME * u) >> (8 * sizeof(int))) & H.maxpos;
+    int k = ((LPRIME * u) >> (8 * sizeof(int))) & H.maxpos;
     while (H.table[k] >= 0) k = (k + 1) & H.maxpos;
     return k;
 }

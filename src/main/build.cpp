@@ -204,7 +204,7 @@ int main(int argc, char *argv[]) {
                 }
                 */
 
-                /*
+
                 case 2:
                 {
                         if (argc != 6) { useBuild(); break; }
@@ -250,7 +250,7 @@ int main(int argc, char *argv[]) {
 
                         break;
                 }
-                */
+
 
             case 3: {
                 if (argc != 6) {

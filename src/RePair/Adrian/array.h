@@ -24,43 +24,35 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+	// extendible array for pairs
 
-typedef long long relong;
+#ifndef ARRAYINCLUDED
+#define ARRAYINCLUDED
 
-relong NullFreq = ((relong)1) << (8*sizeof(relong)-1);
+#include "basics.h"
 
-void *myMalloc(long long n) {
-    void *p;
-    if (n == 0) return NULL;
-    p = (void *)malloc(n);
-    if (p == NULL) {
-        fprintf(stderr, "Error: malloc failed\n");
-        exit(1);
-    }
-    return p;
+namespace repair_gn{
+
+    typedef struct
+    { int *pairs; // identifiers
+        int maxsize;
+        int size;
+        int fst; // first of circular array
+        float factor;
+        int minsize;
+        void *Rec; // records
+    } Tarray;
+
+// contents can be accessed as A.pairs[0..A.size-1]
+
+    int insertArray (Tarray *A, int pair); // inserts pair in A, returns pos
+
+    void deleteArray (Tarray *A); // deletes last cell in A
+
+    Tarray createArray (void *Rec, float factor, int minsize); // creates empty array
+
+    void destroyArray (Tarray *A); // destroys A
 }
 
-void *myRealloc(void *p, long long n) {
-    if (n == 0) {
-        free(p);
-        return NULL;
-    }
-    if (p == NULL) return myMalloc(n);
-    p = (void *)realloc(p, n);
-    if (p == NULL) {
-        fprintf(stderr, "Error: realloc failed\n");
-        exit(1);
-    }
-    return p;
-}
-
-int blog(int x) {
-    int l = 0;
-    while (x) {
-        x >>= 1;
-        l++;
-    }
-    return l;
-}
+#include "records.h"
+#endif

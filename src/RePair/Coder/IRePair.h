@@ -54,24 +54,29 @@ class IRePair {
    public:
     IRePair(){};
     int compress(int *text, uint64_t length, size_t *csymbols, size_t *crules,
-                 Tdiccarray **rules);
+                 Tdiccarray **rules, int MB);
 
    private:
-    uint64_t u;       // |text| and later current |C| with gaps
-    int *C;           // compressed text
-    uint64_t c;       // real |C|
-    int alph;         // max used terminal symbol
-    int n;            // |R|
+    relong u;       // |text| and later current |C| with gaps
+    relong *C;           // compressed text
+    relong c;       // real |C|
+    relong alph;         // max used terminal symbol
+    relong n;            // |R|
     Tlist *L;         // |L| = c;
     Thash Hash;       // hash table of pairs
     Theap Heap;       // special heap of pairs
     Trarray Rec;      // records
     Tdiccarray Dicc;  // compressed dictionary
+    int* text;
+    int MB;
+    int did0 = 0; // did prepare0 or not
 
-    int repair();
+    relong repair();
+    relong repair0(relong len);
     int expand(int i, int d);
 
-    void prepare(uint64_t len);
+    void prepare0(relong len);
+    void prepare(relong len);
     void prnSym(int c);
     void prnC(void);
     void prnRec(void);

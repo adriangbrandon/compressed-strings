@@ -24,43 +24,25 @@ Chile. Blanco Encalada 2120, Santiago, Chile. gnavarro@dcc.uchile.cl
 
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef BASICSINCLUDED
+#define BASICSINCLUDED
 
-typedef long long relong;
+namespace repair_gn {
 
-relong NullFreq = ((relong)1) << (8*sizeof(relong)-1);
+    typedef long long relong;
 
-void *myMalloc(long long n) {
-    void *p;
-    if (n == 0) return NULL;
-    p = (void *)malloc(n);
-    if (p == NULL) {
-        fprintf(stderr, "Error: malloc failed\n");
-        exit(1);
-    }
-    return p;
-}
+    void *myMalloc (relong n); // safe malloc/realloc
+    void *myRealloc (void *p, relong n);
 
-void *myRealloc(void *p, long long n) {
-    if (n == 0) {
-        free(p);
-        return NULL;
-    }
-    if (p == NULL) return myMalloc(n);
-    p = (void *)realloc(p, n);
-    if (p == NULL) {
-        fprintf(stderr, "Error: realloc failed\n");
-        exit(1);
-    }
-    return p;
-}
 
-int blog(int x) {
-    int l = 0;
-    while (x) {
-        x >>= 1;
-        l++;
-    }
-    return l;
-}
+    typedef struct
+    { int left,right;
+    } Tpair;
+
+    extern relong NullFreq;
+
+    int blog (int x); // bits to represent x
+
+};
+
+#endif
